@@ -54,7 +54,35 @@ export function InstagramEmbed({ url }: { url: string }) {
           padding: '0',
           width: '99.375%',
         }}
-      ></blockquote>
+      >
+        <div style={{ padding: '16px' }}>
+          <a
+            href={url.replace(/\/?(\?.*)?$/, '/?utm_source=ig_embed&utm_campaign=loading')}
+            style={{
+              background: '#FFFFFF',
+              lineHeight: 0,
+              padding: '0 0',
+              textAlign: 'center',
+              textDecoration: 'none',
+              width: '100%',
+            }}
+            target="_blank"
+          >
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+              <div style={{ backgroundColor: '#F4F4F4', borderRadius: '50%', flexGrow: 0, height: '40px', marginRight: '14px', width: '40px' }}></div>
+              <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'center' }}>
+                <div style={{ backgroundColor: '#F4F4F4', borderRadius: '4px', flexGrow: 0, height: '14px', marginBottom: '6px', width: '100px' }}></div>
+                <div style={{ backgroundColor: '#F4F4F4', borderRadius: '4px', flexGrow: 0, height: '14px', width: '60px' }}></div>
+              </div>
+            </div>
+            <div style={{ paddingTop: '8px', marginTop: '20px' }}>
+              <div style={{ color: '#3897f0', fontFamily: 'Arial,sans-serif', fontSize: '14px', fontStyle: 'normal', fontWeight: 550, lineHeight: '18px' }}>
+                View this post on Instagram
+              </div>
+            </div>
+          </a>
+        </div>
+      </blockquote>
     </div>
   )
 }
