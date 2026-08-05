@@ -30,6 +30,10 @@ export function SwipeCard({
   const initial = cafe.name.trim().charAt(0).toUpperCase()
   const patternId = `dots-${cafe.id}`
 
+  // Fix base routing for local dev vs GH Pages
+  const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '')
+  const imgSrc = cafe.heroImage?.startsWith('/') ? `${basePath}${cafe.heroImage}` : cafe.heroImage
+
   return (
     <div className="relative flex flex-col h-full w-full overflow-hidden rounded-card bg-cream shadow-card">
       {/* Cover art */}
@@ -40,7 +44,7 @@ export function SwipeCard({
         {cafe.heroImage ? (
           <>
             <img
-              src={cafe.heroImage}
+              src={imgSrc}
               alt={cafe.media[0]?.alt ?? cafe.name}
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover"

@@ -5,6 +5,10 @@ import { type Cafe } from '../lib/schema/cafe'
 import { cn } from '../lib/utils/cn'
 
 export function CafeCard({ cafe, shortlisted = false, onToggleShortlist }: { cafe: Cafe, shortlisted?: boolean, onToggleShortlist?: () => void }) {
+  // Fix base routing for local dev vs GH Pages
+  const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '')
+  const imgSrc = cafe.heroImage?.startsWith('/') ? `${basePath}${cafe.heroImage}` : cafe.heroImage
+
   return (
     <motion.div 
       layout
@@ -16,7 +20,7 @@ export function CafeCard({ cafe, shortlisted = false, onToggleShortlist }: { caf
       <div className="relative aspect-[4/5] bg-neutral-100 overflow-hidden">
         {cafe.heroImage ? (
           <img
-            src={cafe.heroImage}
+            src={imgSrc}
             alt={cafe.media[0]?.alt ?? cafe.name}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
