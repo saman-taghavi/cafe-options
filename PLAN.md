@@ -565,10 +565,10 @@ Lock in writing (README or here):
 
 ### Phase 1 — Skeleton
 
-- Scaffold TanStack Start SPA + pnpm + Tailwind v4 tokens  
-- Hero placeholder, intimate empty state  
-- GH Actions → Pages hello world  
-- Verify base path + refresh behavior  
+- [x] Scaffold TanStack Start SPA + pnpm + Tailwind v4 tokens  
+- [x] Hero placeholder, intimate empty state  
+- [x] GH Actions → Pages hello world  
+- [x] Verify base path + refresh behavior  
 
 **Exit:** branded live URL.
 

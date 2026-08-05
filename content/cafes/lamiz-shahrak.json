@@ -1,0 +1,32 @@
+{
+  "id": "lamiz-shahrak-gharb",
+  "name": "Lamiz Coffee - Shahrak Gharb",
+  "slug": "lamiz-shahrak-gharb",
+  "location": {
+    "neighborhood": "Shahrak Gharb",
+    "arrondissement": 2,
+    "address": "Zarafshan St, Shahrak Gharb, Tehran",
+    "mapsUrl": "https://maps.app.goo.gl/q9mN5R5HhB7Z2Q2p8"
+  },
+  "vibes": [
+    "casual",
+    "grab-and-go"
+  ],
+  "features": {
+    "laptopFriendly": true,
+    "wifi": true,
+    "plugs": true,
+    "terrace": true,
+    "food": false
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/p/B94R2BKo5jG/",
+      "alt": "Cozy corner at Lamiz Coffee",
+      "credit": "@lamizcoffee"
+    }
+  ],
+  "description": "Part of Tehran's beloved coffee chain. The Shahrak Gharb branch offers a cozy neighborhood vibe with a nice outdoor seating area. Reliable, affordable coffee and a great spot for casual meetups or brief work sessions.",
+  "status": "active",
+  "addedAt": "2024-03-21T12:00:00.000Z"
+}

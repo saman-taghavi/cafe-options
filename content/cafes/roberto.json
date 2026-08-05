@@ -1,0 +1,33 @@
+{
+  "id": "roberto-cafe",
+  "name": "Roberto Cafe",
+  "slug": "roberto-cafe",
+  "location": {
+    "neighborhood": "Pasdaran",
+    "arrondissement": 3,
+    "address": "Boostan 2nd St, Pasdaran, Tehran",
+    "mapsUrl": "https://maps.app.goo.gl/d8mN5R5HhB7Z2Q2p8"
+  },
+  "vibes": [
+    "laptop-friendly",
+    "specialty",
+    "roastery"
+  ],
+  "features": {
+    "laptopFriendly": true,
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/p/Cn4R2BKo5jG/",
+      "alt": "Bright wooden interior of Roberto Cafe",
+      "credit": "@roberto.cafe"
+    }
+  ],
+  "description": "Known as one of the most laptop-friendly cafes in Tehran. Very bright interior with excellent coffee and reliable WiFi. The large communal tables make it perfect for working, though it gets very crowded mid-day.",
+  "status": "active",
+  "addedAt": "2024-03-21T11:00:00.000Z"
+}
