@@ -14,7 +14,8 @@
     "lint": "biome lint",
     "check": "biome check",
     "cafe:new": "npx tsx scripts/cafe.ts new",
-    "cafe:validate": "npx tsx scripts/cafe.ts validate"
+    "cafe:validate": "npx tsx scripts/cafe.ts validate",
+    "cafe:check-embeds": "npx tsx scripts/lint.ts check-embeds"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",

@@ -604,12 +604,12 @@ Lock in writing (README or here):
 
 ### Phase 5 — Delight pass
 
-- Motion polish, reduced-motion  
-- Copy audit (`lib/copy.ts`)  
-- Embed skeletons + timeout fallback  
-- Empty / error states  
-- Optional sound toggle  
-- Mobile Safari + Chrome QA  
+- [x] Motion polish, reduced-motion  
+- [x] Copy audit (`lib/copy.ts`)  
+- [x] Embed skeletons + timeout fallback  
+- [x] Empty / error states  
+- [x] Optional sound toggle  
+- [x] Mobile Safari + Chrome QA  
 
 **Exit:** feels like a love product.
 

@@ -1,9 +1,8 @@
 import { createServerFn } from '@tanstack/react-start'
 import { NotifyPayloadSchema } from '../lib/schema/notify'
 
-// In a real app we would use Resend / Twilio / Telegram Bot API here.
-// For GitHub Pages SPA, this server fn won't run as a true backend, 
-// but we structure it as an example of TanStack Start server functions.
+// Fallback logic for GitHub pages which doesn't support running this server function.
+// Usually you would hook directly to Ntfy / SMS / email APIs here.
 export const notifySaman = createServerFn({ method: "POST" })
   .validator((data: unknown) => NotifyPayloadSchema.parse(data))
   .handler(async ({ data }) => {
@@ -14,10 +13,24 @@ export const notifySaman = createServerFn({ method: "POST" })
     // Simulate network delay
     await new Promise((r) => setTimeout(r, 1000))
     
-    // 90% success rate
-    if (Math.random() > 0.1) {
-      return { success: true, message: "Saman has been notified!" }
-    } else {
+    // We send payload to NTFY via REST hook in real environment:
+    try {
+      const resp = await fetch('https://ntfy.sh/saman-cafe-options-78ro0urem6', {
+        method: 'POST',
+        body: `She picked ${data.cafe.name}! 🎉`,
+        headers: {
+          'Title': 'New Cafe Date Picked!',
+          'Tags': 'coffee,heart',
+          'Authorization': `Bearer tk_rslwsgbzachy78ro0urem6dtjwzb8`
+        }
+      })
+      if (!resp.ok) {
+         throw new Error("NTFY failed")
+      }
+      return { success: true, message: "Saman has been notified via Ntfy!" }
+    } catch(e) {
+      // In SPA environment on GH pages this serverFn doesn't actually run serverside,
+      // The frontend will mock the call when inside static export.
       throw new Error("Failed to send notification via network.")
     }
   })

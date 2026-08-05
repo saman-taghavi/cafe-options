@@ -11,15 +11,21 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
 
   const handlePick = async () => {
     setStatus('sending')
-    // Attempt real fan-out here via trpc or fetch.
-    // For pure SPA github pages, we fallback to mailto or manual copy.
-    setTimeout(() => {
-      if (Math.random() > 0.3) {
-        setStatus('success')
-      } else {
-        setStatus('error')
-      }
-    }, 1500)
+    try {
+      const response = await fetch('https://ntfy.sh/saman-cafe-options-78ro0urem6', {
+        method: 'POST',
+        body: `She picked ${cafe.name}! 🎉`,
+        headers: {
+          'Title': 'New Cafe Date Picked!',
+          'Tags': 'coffee,heart',
+          'Authorization': `Bearer tk_rslwsgbzachy78ro0urem6dtjwzb8`
+        }
+      })
+      if (!response.ok) throw new Error('Ntfy failed')
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
   }
 
   const copyToClipboard = () => {
