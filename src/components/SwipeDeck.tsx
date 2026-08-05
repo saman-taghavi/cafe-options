@@ -41,7 +41,7 @@ export function SwipeDeck({
         </div>
         <h3 className="text-3xl font-display font-medium text-neutral-900 mb-3">No more cafes</h3>
         <p className="text-neutral-500 text-lg mb-8 max-w-[280px] font-serif italic text-balance leading-snug">
-          We went through all the cafes in Tehran I think! Check your shortlist, or start again.
+          we went through all the cafes in Tehran I think!
         </p>
         <button
           onClick={() => setIndex(0)}
@@ -75,7 +75,9 @@ export function SwipeDeck({
 
   function handleDrag(_: any, info: any) {
     dragX.set(info.offset.x)
-    if (Math.abs(info.offset.x) > 6) wasDragged.current = true
+    if (Math.abs(info.offset.x) > 20 || Math.abs(info.offset.y) > 20) {
+      wasDragged.current = true
+    }
   }
 
   function handleDragEnd(_: any, info: any) {
