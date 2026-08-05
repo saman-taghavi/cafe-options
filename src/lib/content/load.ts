@@ -26,3 +26,11 @@ export function getCafes(): Cafe[] {
   
   return cafes.sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime())
 }
+
+export function getAvailableVibes(cafes: Cafe[]): string[] {
+  const vibeSet = new Set<string>()
+  cafes.forEach(c => {
+    c.vibes.forEach(v => vibeSet.add(v))
+  })
+  return Array.from(vibeSet).sort()
+}

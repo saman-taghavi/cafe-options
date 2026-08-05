@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { getCafes } from '../lib/content/load'
+import { getCafes, getAvailableVibes } from '../lib/content/load'
 import { FilterBar } from '../components/FilterBar'
 import { CafeCard } from '../components/CafeCard'
 import { CafeSheet } from '../components/CafeSheet'
@@ -111,7 +111,11 @@ function Home() {
           </button>
         </div>
         
-        <FilterBar selected={selectedVibe} onSelect={setSelectedVibe} />
+        <FilterBar 
+          selected={selectedVibe} 
+          onSelect={setSelectedVibe} 
+          availableVibes={getAvailableVibes(cafes)}
+        />
         
         {(shortlist.size > 0 || history.length > 0) && (
           <div className="flex flex-wrap gap-3 mt-4">

@@ -53,9 +53,14 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
       </div>
 
       <div className="relative">
-        <div className="w-32 h-32 bg-rose-50 rounded-full flex items-center justify-center">
-          <Heart className="w-12 h-12 text-rose-500" />
-        </div>
+        <motion.div 
+          onClick={handlePick}
+          className="w-32 h-32 bg-rose-50 hover:bg-rose-100 cursor-pointer rounded-full flex items-center justify-center transition-colors shadow-sm active:scale-95"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Heart className="w-12 h-12 text-rose-500 fill-rose-500/20" />
+        </motion.div>
       </div>
 
       {status === 'idle' && (
