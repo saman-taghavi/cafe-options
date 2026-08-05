@@ -622,12 +622,12 @@ Lock in writing (README or here):
 
 **Exit:** &lt;10 min add-café ritual is real.
 
-### Phase 7 — Optional extras
+### Phase 7 — Deferred (Optional extras)
 
-- [ ] Swipe deck mode  
-- [ ] `/cafe/$id` share links  
-- [ ] “We went here” log  
-- [ ] Bilingual toggle  
+- [ ] Swipe deck mode (deferred)
+- [x] `/cafe/$id` share links  
+- [ ] “We went here” log (deferred)
+- [ ] Bilingual toggle (deferred)
 - [x] Stronger privacy  
 
 ---
