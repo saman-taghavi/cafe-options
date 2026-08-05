@@ -5,6 +5,7 @@ import { CafeSheet } from '../components/CafeSheet'
 import { getCafes } from '../lib/content/load'
 import { motion, AnimatePresence } from 'framer-motion'
 import { type Cafe } from '../lib/schema/cafe'
+import { Copy } from '../lib/content/copy'
 
 export function CafeGrid() {
   const [selectedVibe, setSelectedVibe] = useState<string | null>(null)
@@ -31,20 +32,31 @@ export function CafeGrid() {
     <div className="w-full max-w-5xl mx-auto py-8">
       <FilterBar selected={selectedVibe} onSelect={setSelectedVibe} />
       
-      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 pb-32 px-4 md:px-8">
         <AnimatePresence mode="popLayout">
-          {filtered.map(cafe => (
-            <div key={cafe.id} onClick={() => setActiveCafe(cafe)} className="cursor-pointer">
-              <CafeCard 
-                cafe={cafe} 
-                shortlisted={shortlist.has(cafe.id)}
-                onToggleShortlist={(e) => {
-                  e?.stopPropagation()
-                  toggleShortlist(cafe.id)
-                }}
-              />
-            </div>
-          ))}
+          {filtered.length > 0 ? (
+            filtered.map(cafe => (
+              <div key={cafe.id} onClick={() => setActiveCafe(cafe)} className="cursor-pointer">
+                <CafeCard 
+                  cafe={cafe} 
+                  shortlisted={shortlist.has(cafe.id)}
+                  onToggleShortlist={(e) => {
+                    e?.stopPropagation()
+                    toggleShortlist(cafe.id)
+                  }}
+                />
+              </div>
+            ))
+          ) : (
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="col-span-full py-20 text-center text-neutral-400 font-medium"
+            >
+              {Copy.hero.emptyFilter}
+            </motion.div>
+          )}
         </AnimatePresence>
       </motion.div>
 

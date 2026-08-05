@@ -12,7 +12,7 @@ export function FilterBar({
   onSelect: (v: string | null) => void 
 }) {
   return (
-    <div className="w-full overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+    <div className="w-full overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sticky top-0 bg-white/80 backdrop-blur-xl z-20 border-b border-neutral-100/50 pt-4">
       <div className="flex gap-2 min-w-max">
         <button
           onClick={() => onSelect(null)}

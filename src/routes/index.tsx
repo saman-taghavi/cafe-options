@@ -74,20 +74,31 @@ function Home() {
         <FilterBar selected={selectedVibe} onSelect={setSelectedVibe} />
       </header>
       
-      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
         <AnimatePresence mode="popLayout">
-          {filtered.map(cafe => (
-            <div key={cafe.id} onClick={() => setActiveCafe(cafe)} className="cursor-pointer">
-              <CafeCard 
-                cafe={cafe} 
-                shortlisted={shortlist.has(cafe.id)}
-                onToggleShortlist={(e: any) => {
-                  e?.stopPropagation()
-                  toggleShortlist(cafe.id)
-                }}
-              />
-            </div>
-          ))}
+          {filtered.length > 0 ? (
+            filtered.map(cafe => (
+              <div key={cafe.id} onClick={() => setActiveCafe(cafe)} className="cursor-pointer">
+                <CafeCard 
+                  cafe={cafe} 
+                  shortlisted={shortlist.has(cafe.id)}
+                  onToggleShortlist={(e: any) => {
+                    e?.stopPropagation()
+                    toggleShortlist(cafe.id)
+                  }}
+                />
+              </div>
+            ))
+          ) : (
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="col-span-full py-20 text-center text-neutral-400 font-medium"
+            >
+              Hmm, haven't found any spots with this vibe yet.
+            </motion.div>
+          )}
         </AnimatePresence>
       </motion.div>
 

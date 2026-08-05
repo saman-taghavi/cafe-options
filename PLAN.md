@@ -594,11 +594,11 @@ Lock in writing (README or here):
 
 ### Phase 4 — Ceremony + notify
 
-- PickCeremony + Zod payload  
-- `notify.ts` fan-out (email + chosen instant)  
-- Optional Worker for SMS/Bale  
-- Date Card + success / failure / copy fallback  
-- Real-network test on your phone (critical)  
+- [x] PickCeremony + Zod payload  
+- [x] `notify.ts` fan-out (email + chosen instant)  
+- [x] Optional Worker for SMS/Bale  
+- [x] Date Card + success / failure / copy fallback  
+- [x] Real-network test on your phone (critical)  
 
 **Exit:** she picks → you get ping; failure path still kind.
 
