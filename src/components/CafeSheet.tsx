@@ -20,6 +20,12 @@ export function CafeSheet({
 }) {
   const [showCeremony, setShowCeremony] = useState(false)
 
+  // Fix base routing for local dev vs GH Pages
+  const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '')
+  const heroSrc = cafe?.heroImage?.startsWith('/') ? `${basePath}${cafe.heroImage}` : cafe?.heroImage
+
+  const instagramMedia = cafe?.media.find(m => m.url.includes('instagram.com'))
+
   // Reset ceremony state when drawer closes
   useEffect(() => {
     if (!open) {
@@ -44,21 +50,25 @@ export function CafeSheet({
           </button>
 
           <div className="overflow-y-auto w-full h-full pb-safe">
-            {/* Hero Image / Map / Embed */}
-            <div className="relative w-full shrink-0 bg-neutral-50 mb-6">
-              {cafe.media[0] && cafe.media[0].url.includes('instagram.com') ? (
-                <div className="w-full flex items-center justify-center sm:p-4 p-0">
-                  <InstagramEmbed url={cafe.media[0].url} />
+            {/* Hero Image */}
+            <div className="relative w-full shrink-0 bg-neutral-100 h-72 sm:h-96 mb-6">
+              {heroSrc ? (
+                <img 
+                  src={heroSrc} 
+                  alt={cafe.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : cafe.media[0] && !cafe.media[0].url.includes('instagram.com') ? (
+                <img 
+                  src={cafe.media[0].url} 
+                  alt={cafe.media[0].alt}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-tr from-neutral-100 to-neutral-200">
+                   <div className="font-serif italic text-neutral-400 text-xl">{cafe.name}</div>
                 </div>
-              ) : cafe.media[0] ? (
-                <div className="w-full h-72 sm:h-96 bg-neutral-100">
-                  <img 
-                    src={cafe.media[0].url} 
-                    alt={cafe.media[0].alt}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ) : null}
+              )}
             </div>
 
             <div className="px-6 pb-8 max-w-3xl mx-auto">
@@ -110,6 +120,12 @@ export function CafeSheet({
                       </div>
 
                       <div className="flex flex-col gap-3">
+                        {instagramMedia && (
+                          <div className="my-2">
+                            <InstagramEmbed url={instagramMedia.url} />
+                          </div>
+                        )}
+
                         {cafe.location.mapsEmbedUrl && (
                           <MapPeek embedUrl={cafe.location.mapsEmbedUrl} />
                         )}

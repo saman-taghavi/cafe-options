@@ -34,18 +34,18 @@ export function SwipeDeck({
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col items-center justify-center min-h-[50vh] text-center p-6"
+        className="flex flex-col items-center justify-center min-h-[50vh] text-center p-6 mt-12"
       >
-        <div className="w-14 h-14 rounded-full bg-blush-soft text-mocha flex items-center justify-center mb-5">
-          <Coffee className="w-6 h-6" />
+        <div className="w-16 h-16 rounded-full bg-neutral-100 flex items-center justify-center mb-6 border border-neutral-200 shadow-sm">
+          <Coffee className="w-8 h-8 text-neutral-400" />
         </div>
-        <h3 className="font-display text-2xl font-semibold text-ink mb-2">That's the whole stack</h3>
-        <p className="text-ink-muted mb-6 max-w-sm">
-          You've been through every spot on this list. Check your shortlist, or start the deck again from the top.
+        <h3 className="text-3xl font-display font-medium text-neutral-900 mb-3">No more cafes</h3>
+        <p className="text-neutral-500 text-lg mb-8 max-w-[280px] font-serif italic text-balance leading-snug">
+          We went through all the cafes in Tehran I think! Check your shortlist, or start again.
         </p>
         <button
           onClick={() => setIndex(0)}
-          className="bg-mocha text-paper-warm px-6 py-2.5 rounded-pill font-medium hover:bg-ink transition-colors active:scale-95"
+          className="bg-neutral-900 text-white px-8 py-3.5 rounded-full font-medium shadow-sm hover:bg-neutral-800 transition-all active:scale-[0.98]"
         >
           Start over
         </button>
