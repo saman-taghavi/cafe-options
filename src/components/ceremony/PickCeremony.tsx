@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Confetti from 'react-confetti'
 import { CheckCircle2, Copy, Send, Heart, Loader2 } from 'lucide-react'
 import { type Cafe } from '../../lib/schema/cafe'
@@ -22,6 +22,17 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
         }
       })
       if (!response.ok) throw new Error('Ntfy failed')
+      
+      // Save log to local history
+      try {
+        const historyJson = localStorage.getItem('cafe-options:pick-history')
+        const history = historyJson ? JSON.parse(historyJson) : []
+        // Optional logic: filter out if already exists, or just prepend
+        const filteredHistory = history.filter((h: any) => h.id !== cafe.id)
+        filteredHistory.unshift({ id: cafe.id, name: cafe.name, date: new Date().toISOString() })
+        localStorage.setItem('cafe-options:pick-history', JSON.stringify(filteredHistory))
+      } catch (e) {}
+      
       setStatus('success')
     } catch {
       setStatus('error')

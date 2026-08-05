@@ -1,0 +1,37 @@
+{
+  "id": "hero-cam-cafe-punak",
+  "name": "Hero Cam Cafe",
+  "slug": "hero-cam-cafe-punak",
+  "location": {
+    "neighborhood": "Punak",
+    "arrondissement": 5,
+    "address": "No. 39, north side of Hameila Blvd, Punak, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hero+Cam+Cafe+Hameila+Blvd+Punak+Tehran"
+  },
+  "vibes": [
+    "casual",
+    "minimalist",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/hero.come/",
+      "alt": "Hero Cam Cafe Instagram profile",
+      "credit": "@hero.come"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DJmhT-LMJyF/",
+      "alt": "Hero Cam Cafe barista reel",
+      "credit": "@hero.come"
+    }
+  ],
+  "description": "'A place for a cup of peace': clean modern interior plus a planted courtyard on Hameila Blvd. Fresh coffee, full breakfasts, desserts and hookah from about 8:00 to midnight. Calm and friendly for dates or catch-ups; not a specialty bar or laptop spot. Courtyard is the best seat.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

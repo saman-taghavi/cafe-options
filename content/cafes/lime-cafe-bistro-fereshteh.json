@@ -1,0 +1,32 @@
+{
+  "id": "lime-cafe-bistro-fereshteh",
+  "name": "Lime Cafe Bistro",
+  "slug": "lime-cafe-bistro-fereshteh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "Fereshteh Passage, Shahdiz Alley, Fereshteh St, Elahiyeh, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Lime+Cafe+Bistro+Fereshteh+Passage+Shahdiz+Tehran"
+  },
+  "vibes": [
+    "casual",
+    "date-spot",
+    "specialty"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/limecafebistro_fereshteh/",
+      "alt": "Interior of Lime Cafe Bistro on Fereshteh Street",
+      "credit": "@limecafebistro_fereshteh"
+    }
+  ],
+  "description": "A busy Fereshteh bistro tucked inside the Fereshteh Passage, best known locally for its full, generous breakfasts alongside a solid coffee menu. Popular enough that mornings and weekends get genuinely crowded.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

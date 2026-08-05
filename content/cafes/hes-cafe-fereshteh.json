@@ -1,0 +1,32 @@
+{
+  "id": "hes-cafe-fereshteh",
+  "name": "Hes Cafe",
+  "slug": "hes-cafe-fereshteh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "Fereshteh St, Niloofar, Royal Building, 2nd Floor, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hes+Cafe+Fereshteh+Niloofar+Royal+Building+Tehran"
+  },
+  "vibes": [
+    "specialty",
+    "minimalist",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/hescafe_cafe/",
+      "alt": "Hes Cafe interior on Fereshteh Street",
+      "credit": "@hescafe_cafe"
+    }
+  ],
+  "description": "A warm, well-regarded spot tucked into the Royal building on Fereshteh Street. Known for a friendly atmosphere and fresh Iranian-inspired dishes alongside its coffee menu. Popular with locals for casual meetups.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

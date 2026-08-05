@@ -1,0 +1,31 @@
+{
+  "id": "langine-cafe-dadman",
+  "name": "Cafe Langine",
+  "slug": "langine-cafe-dadman",
+  "location": {
+    "neighborhood": "Shahrak Gharb",
+    "arrondissement": 2,
+    "address": "Dadman Blvd, No. 36, Shahrak Gharb, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Langine+Dadman+Boulevard+36+Shahrak+Gharb+Tehran"
+  },
+  "vibes": [
+    "casual",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/langineofficial/",
+      "alt": "Dining hall at Cafe Langine on Dadman Boulevard",
+      "credit": "@langineofficial"
+    }
+  ],
+  "description": "A two-floor cafe-restaurant on Dadman Boulevard with a Western food and bar menu, unhurried breakfast service, and space for about 60 guests. More of a full sit-down meal spot than a quick coffee stop, with decent parking nearby.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "the-d-project-fereshteh",
+  "name": "The D Project",
+  "slug": "the-d-project-fereshteh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "Royal Address Complex, Niloufar St, off Fereshteh St, Elahiyeh, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=The+D+Project+Cafe+Royal+Complex+Niloufar+Fereshteh+Tehran"
+  },
+  "vibes": [
+    "specialty",
+    "patisserie",
+    "minimalist"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/the_d_project_cafe/",
+      "alt": "The D Project cafe and sourdough bakery profile",
+      "credit": "@the_d_project_cafe"
+    },
+    {
+      "url": "https://www.instagram.com/reel/C3LKt4EIjcz/",
+      "alt": "Lifestyle vlog showing The D Project interior",
+      "credit": "vlog by @anis_life_style_ tagging @the_d_project_cafe"
+    }
+  ],
+  "description": "Opened 2023 in Royal Complex as cafe-and-sourdough-bakery: pale, airy, minimal, with a visible bread counter and good specialty coffee. A July 2026 laptop-work roundup pick; freelancers camp here. Full breakfast, sandwiches, pasta, desserts. Fills up on weekends. Open 9:00-24:00.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

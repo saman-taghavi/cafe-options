@@ -1,0 +1,32 @@
+{
+  "id": "viuna-saadat-abad",
+  "name": "Viuna Cafe (Saadat Abad)",
+  "slug": "viuna-saadat-abad",
+  "location": {
+    "neighborhood": "Saadat Abad",
+    "arrondissement": 2,
+    "address": "End of Saadat Abad Blvd, toward Kooye Faraz, corner of Behzad intersection, Tandis Complex, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Viuna+Cafe+Saadat+Abad+Tandis+Complex+Tehran"
+  },
+  "vibes": [
+    "minimalist",
+    "casual",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/viuna_cafe_saadatabad/",
+      "alt": "Interior of Viuna Cafe's Saadat Abad branch",
+      "credit": "@viuna_cafe_saadatabad"
+    }
+  ],
+  "description": "A calm, smoke-free branch of the Viuna chain at the far end of Saadat Abad Blvd, inside the Tandis Complex. Clean, comfortable interior and a solid menu make it a reliable choice for a relaxed coffee or light meal.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

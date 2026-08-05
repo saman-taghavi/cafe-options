@@ -9,12 +9,10 @@
     "mapsUrl": "https://maps.app.goo.gl/d8mN5R5HhB7Z2Q2p8"
   },
   "vibes": [
-    "laptop-friendly",
     "specialty",
     "roastery"
   ],
   "features": {
-    "laptopFriendly": true,
     "wifi": true,
     "plugs": true,
     "terrace": false,

@@ -1,0 +1,42 @@
+{
+  "id": "man-cafe-punak",
+  "name": "Man Cafe",
+  "slug": "man-cafe-punak",
+  "location": {
+    "neighborhood": "Punak",
+    "arrondissement": 5,
+    "address": "Sardar Jangal Blvd, Heydari Moqadam-e Sharghi, Jam Jam Tower, Punak, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Man+Cafe+Heydari+Moqadam+Sardar+Jangal+Punak+Tehran"
+  },
+  "vibes": [
+    "music",
+    "casual",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/maancafe.co/",
+      "alt": "Man Cafe Instagram profile",
+      "credit": "@maancafe.co"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DOxo0kTiBnQ/",
+      "alt": "Man Cafe reel on coffee bar and Italian recipes",
+      "credit": "@maancafe.co"
+    },
+    {
+      "url": "https://www.instagram.com/p/DOIp45HCLbL/",
+      "alt": "Man Cafe post on coffee and smoothie bar",
+      "credit": "@maancafe.co"
+    }
+  ],
+  "description": "A favorite Punak hangout in Jam Jam Tower: Italian chef (ex-Dutch embassy) recipes, a proper coffee and smoothie bar, board games and live music across indoor, outdoor and VIP spaces. Young crowd, lively evenings. Less a quiet specialty bar than a date-and-hangout spot.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

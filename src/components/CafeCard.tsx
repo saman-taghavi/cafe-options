@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
-import { Heart, MapPin, Wifi, Zap, Coffee } from 'lucide-react'
+import { Heart, MapPin, Wifi, Zap, Coffee, Camera } from 'lucide-react'
 import { type Cafe } from '../lib/schema/cafe'
 import { cn } from '../lib/utils/cn'
 
@@ -15,12 +15,10 @@ export function CafeCard({ cafe, shortlisted = false, onToggleShortlist }: { caf
     >
       <div className="relative aspect-[4/5] bg-neutral-100 overflow-hidden">
         {cafe.media[0] && (
-          <img 
-            src={cafe.media[0].url} 
-            alt={cafe.media[0].alt}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
+          <div className="w-full h-full bg-gradient-to-br from-neutral-200 to-neutral-100 transition-transform duration-500 group-hover:scale-105 flex flex-col justify-center items-center text-center p-6 bg-[length:400%_400%] animate-pulse-slow">
+             <h4 className="font-serif italic text-2xl text-neutral-400 opacity-60 mb-2">{cafe.name}</h4>
+             <Camera className="w-5 h-5 text-neutral-300" />
+          </div>
         )}
         
         {/* Badges */}

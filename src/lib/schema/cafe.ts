@@ -1,7 +1,6 @@
 import { z } from 'zod'
 
 export const VibeSchema = z.enum([
-  'laptop-friendly',
   'minimalist',
   'scandi',
   'brutalist',
@@ -30,6 +29,7 @@ export const LocationSchema = z.enum([
   'Saadat Abad',
   'Tajrish',
   'Niavaran',
+  'Punak',
 ])
 
 export const ArrondissementSchema = z.union([
@@ -40,8 +40,8 @@ export const ArrondissementSchema = z.union([
 ])
 
 export const InstagramMediaSchema = z.object({
-  url: z.string().url().refine(val => val.includes('instagram.com/p/') || val.includes('instagram.com/reel/'), {
-    message: "Must be a valid Instagram post or reel URL"
+  url: z.string().url().refine(val => val.includes('instagram.com'), {
+    message: "Must be a valid Instagram URL"
   }),
   alt: z.string(),
   credit: z.string().optional()
@@ -58,12 +58,12 @@ const BaseCafeSchema = z.object({
     arrondissement: ArrondissementSchema,
     address: z.string(),
     mapsUrl: z.string().url(),
+    mapsEmbedUrl: z.string().url().optional(),
   }),
   
   // Vibe & Features
   vibes: z.array(VibeSchema).min(1).max(3),
   features: z.object({
-    laptopFriendly: z.boolean(),
     wifi: z.boolean(),
     plugs: z.boolean(),
     terrace: z.boolean(),
@@ -72,6 +72,14 @@ const BaseCafeSchema = z.object({
   
   // Media (IG URLs for embedding or scraping later)
   media: z.array(InstagramMediaSchema).min(1).max(5),
+  
+  // Optional Website/OG data
+  websitePreview: z.object({
+    title: z.string().optional(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    url: z.string().url()
+  }).optional(),
   
   // Editorial
   description: z.string().min(50).max(300),

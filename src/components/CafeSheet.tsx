@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react'
 import { type Cafe } from '../lib/schema/cafe'
 import { cn } from '../lib/utils/cn'
 import { PickCeremony } from './ceremony/PickCeremony'
+import { InstagramEmbed } from './InstagramEmbed'
+import { MapPeek } from './MapPeek'
+import { WebsiteCard } from './WebsiteCard'
 
 export function CafeSheet({ 
   cafe, 
@@ -41,15 +44,21 @@ export function CafeSheet({
           </button>
 
           <div className="overflow-y-auto w-full h-full pb-safe">
-            {/* Hero Image */}
-            <div className="relative w-full h-72 sm:h-96 bg-neutral-100 shrink-0">
-              {cafe.media[0] && (
-                <img 
-                  src={cafe.media[0].url} 
-                  alt={cafe.media[0].alt}
-                  className="w-full h-full object-cover"
-                />
-              )}
+            {/* Hero Image / Map / Embed */}
+            <div className="relative w-full shrink-0">
+              {cafe.media[0] && cafe.media[0].url.includes('instagram.com') ? (
+                <div className="w-full bg-neutral-50 flex items-center justify-center p-4">
+                  <InstagramEmbed url={cafe.media[0].url} />
+                </div>
+              ) : cafe.media[0] ? (
+                <div className="w-full h-72 sm:h-96 bg-neutral-100">
+                  <img 
+                    src={cafe.media[0].url} 
+                    alt={cafe.media[0].alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : null}
             </div>
 
             <div className="px-6 py-8 max-w-3xl mx-auto">
@@ -91,8 +100,8 @@ export function CafeSheet({
 
                       <div className="grid grid-cols-2 gap-4 mb-8">
                         <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-col gap-1 text-center">
-                          <span className="text-sm font-medium text-neutral-500">Laptop Friendly</span>
-                          <span className="text-lg font-semibold text-neutral-900">{cafe.features.laptopFriendly ? 'Yes' : 'No'}</span>
+                          <span className="text-sm font-medium text-neutral-500">Wifi</span>
+                          <span className="text-lg font-semibold text-neutral-900">{cafe.features.wifi ? 'Yes' : 'No'}</span>
                         </div>
                         <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-col gap-1 text-center">
                           <span className="text-sm font-medium text-neutral-500">Food available</span>
@@ -101,6 +110,14 @@ export function CafeSheet({
                       </div>
 
                       <div className="flex flex-col gap-3">
+                        {cafe.location.mapsEmbedUrl && (
+                          <MapPeek embedUrl={cafe.location.mapsEmbedUrl} />
+                        )}
+                        
+                        {cafe.websitePreview && (
+                          <WebsiteCard preview={cafe.websitePreview} />
+                        )}
+
                         <button 
                           onClick={() => setShowCeremony(true)}
                           className="w-full py-4 bg-rose-500 text-white rounded-2xl font-medium text-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"

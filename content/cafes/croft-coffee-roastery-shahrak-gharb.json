@@ -1,0 +1,42 @@
+{
+  "id": "croft-coffee-roastery-shahrak-gharb",
+  "name": "Croft Coffee Roastery",
+  "slug": "croft-coffee-roastery-shahrak-gharb",
+  "location": {
+    "neighborhood": "Shahrak Gharb",
+    "arrondissement": 2,
+    "address": "No. 46, corner of Boystan-e 2 Sharghi, Farahzadi Blvd, off Darya Blvd, Shahrak Gharb, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Croft+Coffee+Farahzadi+Blvd+Boystan+2+Shahrak+Gharb+Tehran"
+  },
+  "vibes": [
+    "roastery",
+    "specialty",
+    "minimalist"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": false,
+    "food": false
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/croftcoffeestore.ir/",
+      "alt": "Croft Coffee Roastery Instagram profile",
+      "credit": "@croftcoffeestore.ir"
+    },
+    {
+      "url": "https://www.instagram.com/croftcoffeestore.ir/reel/DGI2SY1sAP_/",
+      "alt": "Croft Coffee roastery reel on specialty sourcing",
+      "credit": "@croftcoffeestore.ir"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DGN-X-HMuC3/",
+      "alt": "Croft Coffee reel on selection and quality",
+      "credit": "@croftcoffeestore.ir"
+    }
+  ],
+  "description": "One of west Tehran's genuine specialty roasteries across Darya Blvd from Saadat Abad: single-origin beans roasted on site, drinks at the counter plus beans and gear to take home. Minimal, coffee-first, knowledgeable baristas. Not for laptops or food; come to buy a bag and taste the roast.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

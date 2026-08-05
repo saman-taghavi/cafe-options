@@ -11,9 +11,8 @@ export const template: Partial<Cafe> = {
     address: '',
     mapsUrl: ''
   },
-  vibes: ['laptop-friendly'],
+  vibes: ['casual'],
   features: {
-    laptopFriendly: true,
     wifi: true,
     plugs: true,
     terrace: false,

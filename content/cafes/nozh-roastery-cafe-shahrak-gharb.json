@@ -1,0 +1,32 @@
+{
+  "id": "nozh-roastery-cafe-shahrak-gharb",
+  "name": "Nozh Roastery Cafe",
+  "slug": "nozh-roastery-cafe-shahrak-gharb",
+  "location": {
+    "neighborhood": "Shahrak Gharb",
+    "arrondissement": 2,
+    "address": "Sanat Sq, start of Iran Zamin Blvd, first alley on the right, Shahrak Gharb, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nozh+Coffee+Roastery+Sanat+Square+Iran+Zamin+Shahrak+Gharb+Tehran"
+  },
+  "vibes": [
+    "roastery",
+    "patisserie",
+    "matcha"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/noj_cafe/",
+      "alt": "Nozh Roastery Cafe Instagram profile",
+      "credit": "@noj_cafe (handle per menew.ir)"
+    }
+  ],
+  "description": "A minimalist, mostly-white cafe-bakery-roastery by chef-influencer Navvab Ebrahimi in Shahrak Gharb. Strong on cold brew, pour-over, matcha drinks and a quality pastry and croissant counter. Easy parking, professional service, 7:30-23:30 daily.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

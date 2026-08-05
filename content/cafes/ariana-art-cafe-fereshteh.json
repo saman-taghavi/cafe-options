@@ -1,0 +1,37 @@
+{
+  "id": "ariana-art-cafe-fereshteh",
+  "name": "Ariana Art Cafe",
+  "slug": "ariana-art-cafe-fereshteh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "No. 9 Fereshteh St, Elahiyeh, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Ariana+Art+Cafe+No+9+Fereshteh+Street+Elahiyeh+Tehran"
+  },
+  "vibes": [
+    "specialty",
+    "reading",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/arianaartcafe/",
+      "alt": "Ariana Art Cafe garden gallery profile",
+      "credit": "@arianaartcafe"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DCl3E5qI9KO/",
+      "alt": "Vlog showing Ariana Art Cafe garden and gallery",
+      "credit": "content vlog tagging @arianaartcafe"
+    }
+  ],
+  "description": "A cafe-gallery in a leafy little yard on Fereshteh: vines, art events, specialty coffee, and a famous 'heavenly' breakfast. Deliberately no plugs or reliable wifi, so perfect for reading or a slow date. Garden tables in season. Open 13:00-23:00.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "sky-lounge-saadat-abad",
+  "name": "Sky Lounge (Espinas Palace Hotel)",
+  "slug": "sky-lounge-saadat-abad",
+  "location": {
+    "neighborhood": "Saadat Abad",
+    "arrondissement": 2,
+    "address": "21st Floor, Espinas Palace Hotel, Behrood Sq, 33rd St, Saadat Abad, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sky+Lounge+Espinas+Palace+Hotel+Behrood+Square+Saadat+Abad+Tehran"
+  },
+  "vibes": [
+    "sunset",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/skyloungetehran/",
+      "alt": "View from Sky Lounge terrace atop Espinas Palace Hotel",
+      "credit": "@skyloungetehran"
+    }
+  ],
+  "description": "Tehran's highest terrace café-restaurant, on the 21st floor of the Espinas Palace Hotel. Unbeatable sunset views over the whole city; a splurge for a special date rather than a daily coffee stop, and reservations help.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

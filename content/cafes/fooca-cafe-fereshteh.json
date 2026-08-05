@@ -1,0 +1,32 @@
+{
+  "id": "fooca-cafe-fereshteh",
+  "name": "Cafe Fooca",
+  "slug": "fooca-cafe-fereshteh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "No. 79 Maryam-e Sharghi St, off Fereshteh St, Elahiyeh, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Fooca+79+Maryam+Sharghi+Fereshteh+Tehran"
+  },
+  "vibes": [
+    "patisserie",
+    "casual",
+    "specialty"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/foocacafe/",
+      "alt": "Cafe Fooca Instagram profile",
+      "credit": "@foocacafe (handle per safarmarket.com)"
+    }
+  ],
+  "description": "A neighborhood cafe-bakery that acts like a tiny patisserie: fresh croissants, home cakes and day pastries baked on-site, with espresso, Turkish and brewed coffee. Small courtyard for sunny mornings. Modest, warm and local; not a laptop camp. Go early. Open 7:00-22:00.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

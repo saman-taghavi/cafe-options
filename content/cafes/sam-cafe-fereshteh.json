@@ -1,0 +1,36 @@
+{
+  "id": "sam-cafe-fereshteh",
+  "name": "Sam Cafe / Sam Coffee Roasters",
+  "slug": "sam-cafe-fereshteh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "106 Fereshteh St (Shahid Fayyazi), inside Sam Center Mall, Elahiyeh, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sam+Cafe+Sam+Center+106+Fereshteh+Street+Tehran"
+  },
+  "vibes": [
+    "specialty",
+    "roastery"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/samcoffeeroasters/reel/DSE_TpTjHyt/",
+      "alt": "Sam Cafe fresh roasted coffee packaging reel",
+      "credit": "@samcoffeeroasters"
+    },
+    {
+      "url": "https://www.instagram.com/samcoffeeroasters/",
+      "alt": "Sam Cafe / Sam Coffee Roasters Instagram profile",
+      "credit": "@samcoffeeroasters"
+    }
+  ],
+  "description": "Tehran's original third-wave pioneer: single-origin beans roasted on a 12-kg Probat in-cafe, served via Chemex and siphon. Solid wifi and plugs for laptop work. Honest downsides: small, pricey, genuinely crowded, not a quiet-study spot. Open 8:00-23:00.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

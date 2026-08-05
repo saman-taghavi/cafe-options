@@ -1,0 +1,32 @@
+{
+  "id": "gia-coffeehouse-punak",
+  "name": "Gia Coffeehouse",
+  "slug": "gia-coffeehouse-punak",
+  "location": {
+    "neighborhood": "Punak",
+    "arrondissement": 5,
+    "address": "Sardar Jangal St (north of Sattari Highway, after Abshenasan), Zeytoon St, Norouzpour St, Neshat Alley 1, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Gia+Coffeehouse+Sardar+Jangal+Punak+Tehran"
+  },
+  "vibes": [
+    "music",
+    "reading",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/gia.coffeehouse/",
+      "alt": "Interior of Gia Coffeehouse in Punak",
+      "credit": "@gia.coffeehouse"
+    }
+  ],
+  "description": "One of Punak's most loved coffeehouses, known for a modern, cozy interior with ample parking. Hosts occasional art exhibitions, live music nights, and poetry readings, making it as much a cultural hub as a coffee stop.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

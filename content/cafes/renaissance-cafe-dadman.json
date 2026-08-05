@@ -1,0 +1,32 @@
+{
+  "id": "renaissance-cafe-dadman",
+  "name": "Cafe Renaissance",
+  "slug": "renaissance-cafe-dadman",
+  "location": {
+    "neighborhood": "Shahrak Gharb",
+    "arrondissement": 2,
+    "address": "Dadman Blvd, after Atieh Hospital, between Bostan & Golestan, No. 41, Shahrak Gharb, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Renaissance+Dadman+Boulevard+Shahrak+Gharb+Tehran"
+  },
+  "vibes": [
+    "vintage",
+    "casual",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/renaissance_restaurant/",
+      "alt": "Boho-style wood and greenery interior of Cafe Renaissance",
+      "credit": "@renaissance_restaurant"
+    }
+  ],
+  "description": "A boho-styled cafe-restaurant on Dadman Boulevard, mixing warm wood, soft light, and oversized cacti into a favorite local photo spot. Has both an indoor hall and an outdoor courtyard, plus a VIP room for parties.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

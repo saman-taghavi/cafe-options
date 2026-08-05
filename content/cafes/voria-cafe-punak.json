@@ -1,0 +1,32 @@
+{
+  "id": "voria-cafe-punak",
+  "name": "Voria Cafe (Sardar Jangal)",
+  "slug": "voria-cafe-punak",
+  "location": {
+    "neighborhood": "Punak",
+    "arrondissement": 5,
+    "address": "Sardar Jangal Blvd, corner of Qods-e Gharbi, South Punak, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Voria+Cafe+Sardar+Jangal+Qods+Gharbi+Punak+Tehran"
+  },
+  "vibes": [
+    "casual",
+    "specialty",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/voriacafe/",
+      "alt": "Interior of Voria Cafe on Sardar Jangal Boulevard",
+      "credit": "@voriacafe"
+    }
+  ],
+  "description": "One of west Tehran's most-followed cafe chains, with a dedicated Sardar Jangal branch in South Punak. Reliable coffee and full menu in a polished, modern space. Popular enough to draw a steady crowd most evenings.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}

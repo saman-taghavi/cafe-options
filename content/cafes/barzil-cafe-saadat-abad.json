@@ -1,0 +1,32 @@
+{
+  "id": "barzil-cafe-saadat-abad",
+  "name": "Barzil Sport Cafe & Grill",
+  "slug": "barzil-cafe-saadat-abad",
+  "location": {
+    "neighborhood": "Saadat Abad",
+    "arrondissement": 2,
+    "address": "Sarv-e Gharbi Blvd, Sadaf St, corner of Azalia alley, Saadat Abad, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Barzil+Cafe+Sadaf+Street+Sarv+Gharbi+Saadat+Abad+Tehran"
+  },
+  "vibes": [
+    "date-spot",
+    "music",
+    "casual"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/barzil.ir/",
+      "alt": "Barzil Sport Cafe & Grill Instagram profile",
+      "credit": "@barzil.ir"
+    }
+  ],
+  "description": "A sport-cafe-grill and Saadat Abad institution: big breakfast bar in the morning, highly-rated burger nights after dark. Modern, energetic interior, slick service, open 8:00-midnight. The trade-off: loud and busy at night, and a grill first, specialty coffee second.",
+  "status": "active",
+  "addedAt": "2026-08-05T00:00:00.000Z"
+}
