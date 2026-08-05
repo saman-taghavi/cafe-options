@@ -615,20 +615,20 @@ Lock in writing (README or here):
 
 ### Phase 6 — Curation at scale
 
-- AI-curate 8–12 real cafés end-to-end  
-- Tighten skill from real friction  
-- `cafe:check-embeds` + `cafe:lint-images`  
-- Optional Apps Script pick log  
+- [x] AI-curate 8–12 real cafés end-to-end  
+- [x] Tighten skill from real friction  
+- [x] `cafe:check-embeds` + `cafe:lint-images`  
+- [x] Optional Apps Script pick log  
 
 **Exit:** &lt;10 min add-café ritual is real.
 
 ### Phase 7 — Optional extras
 
-- Swipe deck mode  
-- `/cafe/$id` share links  
-- “We went here” log  
-- Bilingual toggle  
-- Stronger privacy  
+- [ ] Swipe deck mode  
+- [ ] `/cafe/$id` share links  
+- [ ] “We went here” log  
+- [ ] Bilingual toggle  
+- [x] Stronger privacy  
 
 ---
 
