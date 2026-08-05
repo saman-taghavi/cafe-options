@@ -1,4 +1,4 @@
-import { Cafe, CafeSchema } from '../schema/cafe'
+import { CafeSchema, type Cafe } from '../schema/cafe'
 
 // Vite glob import of raw JSON strings or direct object modules
 const cafeModules = import.meta.glob('../../../content/cafes/*.json', { eager: true })
