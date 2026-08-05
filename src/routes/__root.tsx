@@ -4,6 +4,8 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
 
+import { AuthGate } from '../components/AuthGate'
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -36,7 +38,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script async src="//www.instagram.com/embed.js"></script>
       </head>
       <body>
-        {children}
+        <AuthGate>
+          {children}
+        </AuthGate>
         <TanStackDevtools
           config={{
             position: 'bottom-right',
