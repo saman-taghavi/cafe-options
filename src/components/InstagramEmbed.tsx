@@ -36,10 +36,18 @@ export function InstagramEmbed({ url }: { url: string }) {
     )
   }
 
+  const cleanUrl = url.replace(/\/?(\?.*)?$/, '')
+  // Strip out the username part if it accidentally exists e.g., /arianaartcafe/p/... -> /p/...
+  const instagramPostIdMatch = cleanUrl.match(/\/(p|reel|tv)\/([a-zA-Z0-9_-]+)/)
+  
+  const embedSrc = instagramPostIdMatch 
+    ? `https://www.instagram.com/${instagramPostIdMatch[1]}/${instagramPostIdMatch[2]}/embed`
+    : `${cleanUrl}/embed`
+
   return (
     <div className="flex justify-center my-4 overflow-hidden rounded-xl w-full">
       <iframe
-        src={url.replace(/\/?(\?.*)?$/, '/embed')}
+        src={embedSrc}
         width="100%"
         height="500"
         style={{ border: 'none', overflow: 'hidden' }}
