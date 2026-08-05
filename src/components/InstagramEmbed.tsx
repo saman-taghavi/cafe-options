@@ -45,20 +45,20 @@ export function InstagramEmbed({ url }: { url: string }) {
     : `${cleanUrl}/embed`
 
   return (
-    <div className="flex justify-center my-6 group">
-      <div className="w-full relative overflow-hidden rounded-2xl bg-neutral-50 shadow-sm border border-neutral-100 transition-shadow duration-500 hover:shadow-md">
+    <div className="flex justify-center w-full group isolate">
+      <div className="w-full relative overflow-hidden bg-neutral-50 shadow-sm border border-neutral-100 transition-shadow duration-500 hover:shadow-md sm:rounded-2xl rounded-none">
         <iframe
           src={`${embedSrc}?hidecaption=1`}
           width="100%"
           height="620"
-          className="bg-transparent"
+          className="bg-neutral-50 w-full"
           style={{ border: 'none', overflow: 'hidden' }}
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           scrolling="no"
         ></iframe>
         
         {/* Subtle overlay to soften the jarring instagram white borders into our minimalist aesthetic */}
-        <div className="pointer-events-none absolute inset-0 rounded-2xl border border-black/[0.04] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)]"></div>
+        <div className="pointer-events-none absolute inset-0 sm:rounded-2xl rounded-none border border-black/[0.04] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)]"></div>
       </div>
     </div>
   )

@@ -45,9 +45,9 @@ export function CafeSheet({
 
           <div className="overflow-y-auto w-full h-full pb-safe">
             {/* Hero Image / Map / Embed */}
-            <div className="relative w-full shrink-0">
+            <div className="relative w-full shrink-0 bg-neutral-50 mb-6">
               {cafe.media[0] && cafe.media[0].url.includes('instagram.com') ? (
-                <div className="w-full bg-neutral-50 flex items-center justify-center p-4">
+                <div className="w-full flex items-center justify-center sm:p-4 p-0">
                   <InstagramEmbed url={cafe.media[0].url} />
                 </div>
               ) : cafe.media[0] ? (
@@ -61,7 +61,7 @@ export function CafeSheet({
               ) : null}
             </div>
 
-            <div className="px-6 py-8 max-w-3xl mx-auto">
+            <div className="px-6 pb-8 max-w-3xl mx-auto">
               <div className="flex flex-wrap gap-2 mb-4">
                 {cafe.vibes.map(vibe => (
                   <span key={vibe} className="px-3 py-1 bg-neutral-100 text-neutral-600 rounded-full text-sm font-medium capitalize">
