@@ -21,12 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/voriacafe/",
-      "alt": "Interior of Voria Cafe on Sardar Jangal Boulevard",
+      "url": "https://www.instagram.com/voriacafe/reel/DZ979i1AosU/",
+      "alt": "Real photo from Voria Cafe (Sardar Jangal)'s Instagram",
       "credit": "@voriacafe"
     }
   ],
   "description": "One of west Tehran's most-followed cafe chains, with a dedicated Sardar Jangal branch in South Punak. Reliable coffee and full menu in a polished, modern space. Popular enough to draw a steady crowd most evenings.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/voria-cafe-punak.jpg"
 }

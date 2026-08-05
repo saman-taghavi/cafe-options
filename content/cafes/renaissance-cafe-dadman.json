@@ -21,12 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/renaissance_restaurant/",
-      "alt": "Boho-style wood and greenery interior of Cafe Renaissance",
+      "url": "https://www.instagram.com/renaissance_restaurant/p/DblII9pDcCz/",
+      "alt": "Real photo from Cafe Renaissance's Instagram",
       "credit": "@renaissance_restaurant"
     }
   ],
   "description": "A boho-styled cafe-restaurant on Dadman Boulevard, mixing warm wood, soft light, and oversized cacti into a favorite local photo spot. Has both an indoor hall and an outdoor courtyard, plus a VIP room for parties.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/renaissance-cafe-dadman.jpg"
 }

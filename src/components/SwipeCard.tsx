@@ -35,16 +35,31 @@ export function SwipeCard({
       {/* Cover art */}
       <div
         className="relative flex-1 overflow-hidden"
-        style={{ background: `linear-gradient(155deg, ${theme.from} 0%, ${theme.to} 100%)` }}
+        style={cafe.heroImage ? undefined : { background: `linear-gradient(155deg, ${theme.from} 0%, ${theme.to} 100%)` }}
       >
-        <svg className="absolute inset-0 w-full h-full opacity-[0.14]" aria-hidden="true">
-          <defs>
-            <pattern id={patternId} width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.3" fill={theme.ink} />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill={`url(#${patternId})`} />
-        </svg>
+        {cafe.heroImage ? (
+          <>
+            <img
+              src={cafe.heroImage}
+              alt={cafe.media[0]?.alt ?? cafe.name}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: `linear-gradient(180deg, ${theme.to}00 45%, ${theme.to}cc 100%)` }}
+            />
+          </>
+        ) : (
+          <svg className="absolute inset-0 w-full h-full opacity-[0.14]" aria-hidden="true">
+            <defs>
+              <pattern id={patternId} width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.3" fill={theme.ink} />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill={`url(#${patternId})`} />
+          </svg>
+        )}
 
         {/* Vibe chips */}
         <div className="absolute top-4 left-4 flex flex-wrap gap-1.5 max-w-[62%] z-10">

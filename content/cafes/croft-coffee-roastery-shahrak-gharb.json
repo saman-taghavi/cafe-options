@@ -21,22 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/croftcoffeestore.ir/",
-      "alt": "Croft Coffee Roastery Instagram profile",
-      "credit": "@croftcoffeestore.ir"
-    },
-    {
-      "url": "https://www.instagram.com/croftcoffeestore.ir/reel/DGI2SY1sAP_/",
-      "alt": "Croft Coffee roastery reel on specialty sourcing",
-      "credit": "@croftcoffeestore.ir"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DGN-X-HMuC3/",
-      "alt": "Croft Coffee reel on selection and quality",
+      "url": "https://www.instagram.com/croftcoffeestore.ir/reel/DIdxkSqtN_K/",
+      "alt": "Real photo from Croft Coffee Roastery's Instagram",
       "credit": "@croftcoffeestore.ir"
     }
   ],
   "description": "One of west Tehran's genuine specialty roasteries across Darya Blvd from Saadat Abad: single-origin beans roasted on site, drinks at the counter plus beans and gear to take home. Minimal, coffee-first, knowledgeable baristas. Not for laptops or food; come to buy a bag and taste the roast.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/croft-coffee-roastery-shahrak-gharb.jpg"
 }

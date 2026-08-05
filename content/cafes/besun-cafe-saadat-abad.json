@@ -21,17 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/besun.bakery/",
-      "alt": "Besun Cafe Bakery Instagram profile",
-      "credit": "@besun.bakery"
-    },
-    {
-      "url": "https://www.instagram.com/p/DBsybj-o0uW/",
-      "alt": "Besun Cafe Bakery seasonal post",
+      "url": "https://www.instagram.com/besun.bakery/p/DSsTfHvCidZ/",
+      "alt": "Real photo from Besun Cafe Bakery's Instagram",
       "credit": "@besun.bakery"
     }
   ],
   "description": "A bakery-cafe whose feed reads 'blooming with positivity': bright patisserie cases, proper espresso, fresh pastries baked in-house. Calmer than the boulevard, great for a mid-morning stop or low-key date. Small and popular, so weekends get cozy-cramped. Open 7:30-23:00.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/besun-cafe-saadat-abad.jpg"
 }

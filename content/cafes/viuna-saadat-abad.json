@@ -21,12 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/viuna_cafe_saadatabad/",
-      "alt": "Interior of Viuna Cafe's Saadat Abad branch",
+      "url": "https://www.instagram.com/viuna_cafe_saadatabad/p/C1HPn9GKDuI/",
+      "alt": "Real photo from Viuna Cafe (Saadat Abad)'s Instagram",
       "credit": "@viuna_cafe_saadatabad"
     }
   ],
   "description": "A calm, smoke-free branch of the Viuna chain at the far end of Saadat Abad Blvd, inside the Tandis Complex. Clean, comfortable interior and a solid menu make it a reliable choice for a relaxed coffee or light meal.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/viuna-saadat-abad.jpg"
 }

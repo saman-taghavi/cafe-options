@@ -21,17 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/hero.come/",
-      "alt": "Hero Cam Cafe Instagram profile",
-      "credit": "@hero.come"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DJmhT-LMJyF/",
-      "alt": "Hero Cam Cafe barista reel",
+      "url": "https://www.instagram.com/hero.come/reel/DSU9JTQjGxd/",
+      "alt": "Real photo from Hero Cam Cafe's Instagram",
       "credit": "@hero.come"
     }
   ],
   "description": "'A place for a cup of peace': clean modern interior plus a planted courtyard on Hameila Blvd. Fresh coffee, full breakfasts, desserts and hookah from about 8:00 to midnight. Calm and friendly for dates or catch-ups; not a specialty bar or laptop spot. Courtyard is the best seat.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/hero-cam-cafe-punak.jpg"
 }

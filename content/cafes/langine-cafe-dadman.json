@@ -20,12 +20,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/langineofficial/",
-      "alt": "Dining hall at Cafe Langine on Dadman Boulevard",
+      "url": "https://www.instagram.com/langineofficial/reel/DR4xsbNkTsD/",
+      "alt": "Real photo from Cafe Langine's Instagram",
       "credit": "@langineofficial"
     }
   ],
   "description": "A two-floor cafe-restaurant on Dadman Boulevard with a Western food and bar menu, unhurried breakfast service, and space for about 60 guests. More of a full sit-down meal spot than a quick coffee stop, with decent parking nearby.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/langine-cafe-dadman.jpg"
 }

@@ -21,17 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/arianaartcafe/",
-      "alt": "Ariana Art Cafe garden gallery profile",
+      "url": "https://www.instagram.com/arianaartcafe/p/DbGna6kBslC/",
+      "alt": "Real photo from Ariana Art Cafe's Instagram",
       "credit": "@arianaartcafe"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DCl3E5qI9KO/",
-      "alt": "Vlog showing Ariana Art Cafe garden and gallery",
-      "credit": "content vlog tagging @arianaartcafe"
     }
   ],
   "description": "A cafe-gallery in a leafy little yard on Fereshteh: vines, art events, specialty coffee, and a famous 'heavenly' breakfast. Deliberately no plugs or reliable wifi, so perfect for reading or a slow date. Garden tables in season. Open 13:00-23:00.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/ariana-art-cafe-fereshteh.jpg"
 }

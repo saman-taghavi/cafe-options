@@ -21,12 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/noj_cafe/",
-      "alt": "Nozh Roastery Cafe Instagram profile",
-      "credit": "@noj_cafe (handle per menew.ir)"
+      "url": "https://www.instagram.com/noj_cafe/reel/Dbii9jnCY3t/",
+      "alt": "Real photo from Nozh Roastery Cafe's Instagram",
+      "credit": "@noj_cafe"
     }
   ],
   "description": "A minimalist, mostly-white cafe-bakery-roastery by chef-influencer Navvab Ebrahimi in Shahrak Gharb. Strong on cold brew, pour-over, matcha drinks and a quality pastry and croissant counter. Easy parking, professional service, 7:30-23:30 daily.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/nozh-roastery-cafe-shahrak-gharb.jpg"
 }

@@ -21,12 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/limecafebistro_fereshteh/",
-      "alt": "Interior of Lime Cafe Bistro on Fereshteh Street",
+      "url": "https://www.instagram.com/limecafebistro_fereshteh/p/CJduOE8AJIn/",
+      "alt": "Real photo from Lime Cafe Bistro's Instagram",
       "credit": "@limecafebistro_fereshteh"
     }
   ],
   "description": "A busy Fereshteh bistro tucked inside the Fereshteh Passage, best known locally for its full, generous breakfasts alongside a solid coffee menu. Popular enough that mornings and weekends get genuinely crowded.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/lime-cafe-bistro-fereshteh.jpg"
 }

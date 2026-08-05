@@ -21,12 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/hescafe_cafe/",
-      "alt": "Hes Cafe interior on Fereshteh Street",
+      "url": "https://www.instagram.com/hescafe_cafe/p/CtWkHSAsTrF/",
+      "alt": "Real photo from Hes Cafe's Instagram",
       "credit": "@hescafe_cafe"
     }
   ],
   "description": "A warm, well-regarded spot tucked into the Royal building on Fereshteh Street. Known for a friendly atmosphere and fresh Iranian-inspired dishes alongside its coffee menu. Popular with locals for casual meetups.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/hes-cafe-fereshteh.jpg"
 }

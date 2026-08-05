@@ -21,12 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/barzil.ir/",
-      "alt": "Barzil Sport Cafe & Grill Instagram profile",
+      "url": "https://www.instagram.com/barzil.ir/p/Da45TPxCI5l/",
+      "alt": "Real photo from Barzil Sport Cafe & Grill's Instagram",
       "credit": "@barzil.ir"
     }
   ],
   "description": "A sport-cafe-grill and Saadat Abad institution: big breakfast bar in the morning, highly-rated burger nights after dark. Modern, energetic interior, slick service, open 8:00-midnight. The trade-off: loud and busy at night, and a grill first, specialty coffee second.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/barzil-cafe-saadat-abad.jpg"
 }

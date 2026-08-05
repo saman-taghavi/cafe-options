@@ -72,7 +72,10 @@ const BaseCafeSchema = z.object({
   
   // Media (IG URLs for embedding or scraping later)
   media: z.array(InstagramMediaSchema).min(1).max(5),
-  
+
+  // Real photo pulled from the café's own Instagram, self-hosted under public/images/cafes/
+  heroImage: z.string().optional(),
+
   // Optional Website/OG data
   websitePreview: z.object({
     title: z.string().optional(),

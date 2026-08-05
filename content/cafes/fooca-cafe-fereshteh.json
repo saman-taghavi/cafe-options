@@ -21,12 +21,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/foocacafe/",
-      "alt": "Cafe Fooca Instagram profile",
-      "credit": "@foocacafe (handle per safarmarket.com)"
+      "url": "https://www.instagram.com/foocacafe/p/DDciKD6yPUc/",
+      "alt": "Real photo from Cafe Fooca's Instagram",
+      "credit": "@foocacafe"
     }
   ],
   "description": "A neighborhood cafe-bakery that acts like a tiny patisserie: fresh croissants, home cakes and day pastries baked on-site, with espresso, Turkish and brewed coffee. Small courtyard for sunny mornings. Modest, warm and local; not a laptop camp. Go early. Open 7:00-22:00.",
   "status": "active",
-  "addedAt": "2026-08-05T00:00:00.000Z"
+  "addedAt": "2026-08-05T00:00:00.000Z",
+  "heroImage": "/images/cafes/fooca-cafe-fereshteh.jpg"
 }

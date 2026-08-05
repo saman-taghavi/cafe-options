@@ -20,12 +20,13 @@
   },
   "media": [
     {
-      "url": "https://www.instagram.com/p/Cn4R2BKo5jG/",
-      "alt": "Bright wooden interior of Roberto Cafe",
+      "url": "https://www.instagram.com/roberto.cafe/reel/DbpmjImSp17/",
+      "alt": "Real photo from Roberto Cafe's Instagram",
       "credit": "@roberto.cafe"
     }
   ],
   "description": "Known as one of the most laptop-friendly cafes in Tehran. Very bright interior with excellent coffee and reliable WiFi. The large communal tables make it perfect for working, though it gets very crowded mid-day.",
   "status": "active",
-  "addedAt": "2024-03-21T11:00:00.000Z"
+  "addedAt": "2024-03-21T11:00:00.000Z",
+  "heroImage": "/images/cafes/roberto-cafe.jpg"
 }
