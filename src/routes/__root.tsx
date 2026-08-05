@@ -35,7 +35,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <script async src="//www.instagram.com/embed.js"></script>
+        <script async src="https://www.instagram.com/embed.js"></script>
       </head>
       <body>
         <AuthGate>

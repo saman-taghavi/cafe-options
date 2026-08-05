@@ -40,7 +40,7 @@ export function InstagramEmbed({ url }: { url: string }) {
     <div className="flex justify-center my-4 overflow-hidden rounded-xl w-full">
       <blockquote
         className="instagram-media"
-        data-instgrm-permalink={url}
+        data-instgrm-permalink={`${url}?utm_source=ig_embed&ig_rid=foo`}
         data-instgrm-version="14"
         style={{
           background: '#FFF',
