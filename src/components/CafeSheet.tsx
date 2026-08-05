@@ -1,8 +1,10 @@
 import { Drawer } from 'vaul'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { X, MapPin, ExternalLink, Navigation } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import { type Cafe } from '../lib/schema/cafe'
 import { cn } from '../lib/utils/cn'
+import { PickCeremony } from './ceremony/PickCeremony'
 
 export function CafeSheet({ 
   cafe, 
@@ -13,6 +15,15 @@ export function CafeSheet({
   open: boolean, 
   onOpenChange: (open: boolean) => void 
 }) {
+  const [showCeremony, setShowCeremony] = useState(false)
+
+  // Reset ceremony state when drawer closes
+  useEffect(() => {
+    if (!open) {
+      setTimeout(() => setShowCeremony(false), 300)
+    }
+  }, [open])
+
   if (!cafe) return null
 
   return (
@@ -56,31 +67,60 @@ export function CafeSheet({
                 <span>{cafe.location.neighborhood} • {cafe.location.address}</span>
               </div>
 
-              <p className="text-lg text-neutral-700 leading-relaxed mb-8">
-                {cafe.description}
-              </p>
+              <div className="relative overflow-hidden mb-8">
+                <AnimatePresence mode="wait">
+                  {showCeremony ? (
+                    <motion.div
+                      key="ceremony"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                    >
+                      <PickCeremony cafe={cafe} onComplete={() => onOpenChange(false)} />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="details"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      <p className="text-lg text-neutral-700 leading-relaxed mb-8">
+                        {cafe.description}
+                      </p>
 
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-col gap-1 text-center">
-                  <span className="text-sm font-medium text-neutral-500">Laptop Friendly</span>
-                  <span className="text-lg font-semibold text-neutral-900">{cafe.features.laptopFriendly ? 'Yes' : 'No'}</span>
-                </div>
-                <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-col gap-1 text-center">
-                  <span className="text-sm font-medium text-neutral-500">Food available</span>
-                  <span className="text-lg font-semibold text-neutral-900">{cafe.features.food ? 'Yes' : 'Snacks only'}</span>
-                </div>
-              </div>
+                      <div className="grid grid-cols-2 gap-4 mb-8">
+                        <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-col gap-1 text-center">
+                          <span className="text-sm font-medium text-neutral-500">Laptop Friendly</span>
+                          <span className="text-lg font-semibold text-neutral-900">{cafe.features.laptopFriendly ? 'Yes' : 'No'}</span>
+                        </div>
+                        <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-col gap-1 text-center">
+                          <span className="text-sm font-medium text-neutral-500">Food available</span>
+                          <span className="text-lg font-semibold text-neutral-900">{cafe.features.food ? 'Yes' : 'Snacks only'}</span>
+                        </div>
+                      </div>
 
-              <div className="flex flex-col gap-3">
-                <a 
-                  href={cafe.location.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 bg-neutral-900 text-white rounded-2xl font-medium text-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"
-                >
-                  <Navigation className="w-5 h-5" />
-                  Open in Maps
-                </a>
+                      <div className="flex flex-col gap-3">
+                        <button 
+                          onClick={() => setShowCeremony(true)}
+                          className="w-full py-4 bg-rose-500 text-white rounded-2xl font-medium text-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"
+                        >
+                          Let's go here!
+                        </button>
+
+                        <a 
+                          href={cafe.location.mapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-4 bg-neutral-100 text-neutral-900 rounded-2xl font-medium text-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"
+                        >
+                          <Navigation className="w-5 h-5" />
+                          View on Maps
+                        </a>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>

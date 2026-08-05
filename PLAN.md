@@ -584,11 +584,11 @@ Lock in writing (README or here):
 
 ### Phase 3 — Deck + rich sheet
 
-- FilterBar (mood / neighborhood / status / price)  
-- CafeCard grid  
-- CafeSheet with ordered sections  
-- Lazy Instagram embeds + Map peek + Website card  
-- Hearts + Shortlist drawer  
+- [x] FilterBar (mood / neighborhood / status / price)  
+- [x] CafeCard grid  
+- [x] CafeSheet with ordered sections  
+- [x] Lazy Instagram embeds + Map peek + Website card  
+- [x] Hearts + Shortlist drawer  
 
 **Exit:** delightful browse on mobile; no notify yet.
 
