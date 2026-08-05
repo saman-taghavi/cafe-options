@@ -1,5 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { getCafes } from '../lib/content/load'
+import { FilterBar } from '../components/FilterBar'
+import { CafeCard } from '../components/CafeCard'
+import { CafeSheet } from '../components/CafeSheet'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useMemo } from 'react'
 
 export const Route = createFileRoute('/')({ 
   component: Home,
@@ -10,7 +15,23 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   const { cafes } = Route.useLoaderData()
+  const [selectedVibe, setSelectedVibe] = useState<string | null>(null)
+  const [shortlist, setShortlist] = useState<Set<string>>(new Set())
+  const [activeCafe, setActiveCafe] = useState<any>(null)
+
   
+  const filtered = useMemo(() => {
+    if (!selectedVibe) return cafes
+    return cafes.filter(c => c.vibes.includes(selectedVibe as any))
+  }, [cafes, selectedVibe])
+
+  const toggleShortlist = (id: string) => {
+    const next = new Set(shortlist)
+    if (next.has(id)) next.delete(id)
+    else next.add(id)
+    setShortlist(next)
+  }
+
   if (cafes.length === 0) {
     return (
       <main className="min-h-[100dvh] flex flex-col items-center justify-center p-6 text-center max-w-md mx-auto">
@@ -41,33 +62,40 @@ function Home() {
   }
 
   return (
-    <main className="min-h-[100dvh] p-6 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-display mb-8 text-ink font-semibold mt-4">
-        Tehran Café Options
-      </h1>
+    <main className="min-h-[100dvh] p-6 max-w-5xl mx-auto pb-24">
+      <header className="py-6 sm:py-12">
+        <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-ink mb-4">
+          Find your next spot.
+        </h1>
+        <p className="text-lg text-ink-muted max-w-xl mb-8">
+          A curated list of cafes in Tehran for working, reading, and hanging out.
+        </p>
+        
+        <FilterBar selected={selectedVibe} onSelect={setSelectedVibe} />
+      </header>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {cafes.map(cafe => (
-          <article key={cafe.id} className="bg-white rounded-[24px] p-6 shadow-card border border-stone-100 flex flex-col gap-4 group hover:-translate-y-1 transition-all duration-300">
-            <div>
-              <h2 className="text-xl font-bold text-ink">{cafe.name}</h2>
-              <p className="text-ink-muted text-sm mt-1">{cafe.location.neighborhood} • {cafe.location.address}</p>
+      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <AnimatePresence mode="popLayout">
+          {filtered.map(cafe => (
+            <div key={cafe.id} onClick={() => setActiveCafe(cafe)} className="cursor-pointer">
+              <CafeCard 
+                cafe={cafe} 
+                shortlisted={shortlist.has(cafe.id)}
+                onToggleShortlist={(e: any) => {
+                  e?.stopPropagation()
+                  toggleShortlist(cafe.id)
+                }}
+              />
             </div>
-            
-            <p className="text-ink leading-relaxed text-sm line-clamp-3">
-              {cafe.description}
-            </p>
+          ))}
+        </AnimatePresence>
+      </motion.div>
 
-            <div className="flex flex-wrap gap-2 mt-auto pt-4">
-              {cafe.vibes.map(vibe => (
-                <span key={vibe} className="bg-stone-100 text-stone-600 px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider">
-                  {vibe.replace('-', ' ')}
-                </span>
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
+      <CafeSheet 
+        cafe={activeCafe} 
+        open={!!activeCafe} 
+        onOpenChange={(open) => !open && setActiveCafe(null)} 
+      />
     </main>
   )
 }
