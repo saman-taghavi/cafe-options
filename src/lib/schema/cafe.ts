@@ -30,6 +30,13 @@ export const LocationSchema = z.enum([
   'Tajrish',
   'Niavaran',
   'Punak',
+  // Added while expanding the master directory — real Tehran districts
+  // that didn't fit the original 11-neighborhood set.
+  'Andarzgoo',
+  'Shariati',
+  'Chitgar',
+  'Karimkhan',
+  'Mirdamad',
 ])
 
 export const ArrondissementSchema = z.union([

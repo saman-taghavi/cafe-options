@@ -1,0 +1,31 @@
+{
+  "id": "cafe-romance-ferdowsi",
+  "name": "Cafe Romance",
+  "slug": "cafe-romance-ferdowsi",
+  "location": {
+    "neighborhood": "Downtown",
+    "arrondissement": 12,
+    "address": "Zarrabi Alley, near Ferdowsi Square, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Romance+Zarrabi+Alley+Ferdowsi+Square+Tehran"
+  },
+  "vibes": [
+    "vintage",
+    "reading"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/romancecafe/",
+      "alt": "Cafe Romance's Instagram profile",
+      "credit": "@romancecafe"
+    }
+  ],
+  "description": "A mid-century salon near Ferdowsi Square, set in a former embassy annex. Communal tables, an intellectual crowd, and a name that does half the work for you.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

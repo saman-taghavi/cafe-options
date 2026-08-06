@@ -1,0 +1,31 @@
+{
+  "id": "v-cafe-karimkhan",
+  "name": "V Café",
+  "slug": "v-cafe-karimkhan",
+  "location": {
+    "neighborhood": "Karimkhan",
+    "arrondissement": 6,
+    "address": "Karimkhan Blvd, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=V+Cafe+Karimkhan+Boulevard+Tehran"
+  },
+  "vibes": [
+    "brutalist",
+    "specialty"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/vcafe.tehran/",
+      "alt": "V Café's Instagram profile",
+      "credit": "@vcafe.tehran"
+    }
+  ],
+  "description": "A sprawling, multi-level industrial space on Karimkhan with a high-volume specialty bar at its center. Big, loud (in a good way), and built to handle a packed Friday night without losing quality.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

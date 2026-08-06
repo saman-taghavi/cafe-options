@@ -1,0 +1,31 @@
+{
+  "id": "diestro-cafe-motahari",
+  "name": "Diestro Cafe",
+  "slug": "diestro-cafe-motahari",
+  "location": {
+    "neighborhood": "Downtown",
+    "arrondissement": 6,
+    "address": "Motahari St, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Diestro+Coffee+Motahari+Street+Tehran"
+  },
+  "vibes": [
+    "minimalist",
+    "specialty"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/diestrocoffee/",
+      "alt": "Diestro Coffee's Instagram profile",
+      "credit": "@diestrocoffee"
+    }
+  ],
+  "description": "A sharply lit, design-forward specialty bar on Motahari Street. The lighting concept alone makes it feel like someone actually art-directed the room — good for a striking first-date backdrop.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

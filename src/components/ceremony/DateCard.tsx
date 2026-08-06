@@ -7,7 +7,7 @@ import { type Cafe } from '../../lib/schema/cafe'
  * ceremony. Gradient-shimmer border, her note in a handwritten font,
  * couple motif. This is the thing she keeps.
  */
-export function DateCard({ cafe, note }: { cafe: Cafe; note?: string }) {
+export function DateCard({ cafe, note, when }: { cafe: Cafe; note?: string; when?: string }) {
   const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '')
   const imgSrc = cafe.heroImage?.startsWith('/') ? `${basePath}${cafe.heroImage}` : cafe.heroImage
   const today = new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' })
@@ -41,7 +41,11 @@ export function DateCard({ cafe, note }: { cafe: Cafe; note?: string }) {
             </div>
 
             <p className="text-xs uppercase tracking-[0.18em] text-ink-muted mb-1">Saved for us</p>
-            <h3 className="text-2xl font-display font-semibold text-ink mb-3">{cafe.name}</h3>
+            <h3 className="text-2xl font-display font-semibold text-ink mb-1">{cafe.name}</h3>
+
+            {when && (
+              <p className="text-sm font-medium text-rose-500 mb-3">{when}</p>
+            )}
 
             {note?.trim() && (
               <p className="font-script text-xl text-mocha leading-snug mb-3 px-2">"{note.trim()}"</p>

@@ -1,0 +1,31 @@
+{
+  "id": "shemroon-cafe-chitgar",
+  "name": "Shemroon Café",
+  "slug": "shemroon-cafe-chitgar",
+  "location": {
+    "neighborhood": "Chitgar",
+    "arrondissement": 5,
+    "address": "Bam Land, Chitgar Lake, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Shemroon+Cafe+Bam+Land+Chitgar+Lake+Tehran"
+  },
+  "vibes": [
+    "casual",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/cafeshemroon/",
+      "alt": "Cafe Shemroon's Instagram profile",
+      "credit": "@cafeshemroon"
+    }
+  ],
+  "description": "Wide-open terraces looking straight out over Chitgar Lake. Big breakfast and brunch menu, built for a lazy weekend morning rather than a quick coffee — go when you want the whole morning free.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

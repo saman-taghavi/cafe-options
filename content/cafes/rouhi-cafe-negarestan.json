@@ -1,0 +1,31 @@
+{
+  "id": "rouhi-cafe-negarestan",
+  "name": "Rouhi Café",
+  "slug": "rouhi-cafe-negarestan",
+  "location": {
+    "neighborhood": "Downtown",
+    "arrondissement": 12,
+    "address": "Negarestan Garden Museum, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rouhi+Cafe+Negarestan+Garden+Museum+Tehran"
+  },
+  "vibes": [
+    "vintage",
+    "reading"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/rouhi.group/",
+      "alt": "Rouhi Group's Instagram profile (parent account for the Negarestan Garden café)",
+      "credit": "@rouhi.group"
+    }
+  ],
+  "description": "A pavilion inside the Negarestan Garden museum grounds — brass drinkware, Persian classical detailing, and a genuinely quiet courtyard a few steps from a working museum.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

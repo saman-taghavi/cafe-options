@@ -1,0 +1,31 @@
+{
+  "id": "femme-chic-patisserie",
+  "name": "Femme Chic Patisserie",
+  "slug": "femme-chic-patisserie",
+  "location": {
+    "neighborhood": "Downtown",
+    "arrondissement": 6,
+    "address": "Central Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Femme+Chic+Patisserie+Tehran"
+  },
+  "vibes": [
+    "patisserie",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/femmechic.patisserie/",
+      "alt": "Femme Chic Patisserie's Instagram profile",
+      "credit": "@femmechic.patisserie"
+    }
+  ],
+  "description": "An Art Deco patisserie built around a Le Cordon Bleu-trained pastry program. French technique, a woman-led kitchen, and espresso drinks that are clearly the supporting act to the desserts.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

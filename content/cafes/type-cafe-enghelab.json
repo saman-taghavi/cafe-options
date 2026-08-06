@@ -1,0 +1,31 @@
+{
+  "id": "type-cafe-enghelab",
+  "name": "Type Café",
+  "slug": "type-cafe-enghelab",
+  "location": {
+    "neighborhood": "Downtown",
+    "arrondissement": 11,
+    "address": "Enghelab St, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Type+Cafe+Enghelab+Street+Tehran"
+  },
+  "vibes": [
+    "reading",
+    "vintage"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": false
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/cafetype/",
+      "alt": "Cafe Type's Instagram profile",
+      "credit": "@cafetype"
+    }
+  ],
+  "description": "Typewriter decor and quiet corners near Enghelab's academic strip. Mid-century literary mood, made for a slow afternoon of talking rather than a quick espresso run.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

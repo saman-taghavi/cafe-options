@@ -1,0 +1,31 @@
+{
+  "id": "tomo-cucina-italiana-elahieh",
+  "name": "Tomo Cucina Italiana",
+  "slug": "tomo-cucina-italiana-elahieh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "Elahiyeh, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Tomo+Cucina+Italiana+Elahiyeh+Tehran"
+  },
+  "vibes": [
+    "date-spot",
+    "casual"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/tomo.cucina/",
+      "alt": "Tomo Cucina Italiana's Instagram profile",
+      "credit": "@tomo.cucina"
+    }
+  ],
+  "description": "An Italian-chic lounge in Elahiyeh pairing proper espresso extraction with an artisanal dolci menu. A bit more restaurant than cafe — good for a dressier date night.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

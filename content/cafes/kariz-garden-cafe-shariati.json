@@ -1,0 +1,31 @@
+{
+  "id": "kariz-garden-cafe-shariati",
+  "name": "Kariz Garden Café",
+  "slug": "kariz-garden-cafe-shariati",
+  "location": {
+    "neighborhood": "Shariati",
+    "arrondissement": 7,
+    "address": "Shariati Ave, near the Poets Association Garden, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kariz+Garden+Cafe+Shariati+Avenue+Tehran"
+  },
+  "vibes": [
+    "hidden",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/kariz.garden.cafe/",
+      "alt": "Kariz Garden Café's Instagram profile",
+      "credit": "@kariz.garden.cafe"
+    }
+  ],
+  "description": "A secluded subtropical courtyard off Shariati Avenue, with a running water channel cutting through the seating. Feels hidden even though it's on a major avenue — bring her here to disappear for an hour.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

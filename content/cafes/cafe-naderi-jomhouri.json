@@ -1,0 +1,31 @@
+{
+  "id": "cafe-naderi-jomhouri",
+  "name": "Cafe Naderi",
+  "slug": "cafe-naderi-jomhouri",
+  "location": {
+    "neighborhood": "Downtown",
+    "arrondissement": 12,
+    "address": "Jomhouri Ave, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Naderi+Jomhouri+Avenue+Tehran"
+  },
+  "vibes": [
+    "vintage",
+    "reading"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/nadericafe/",
+      "alt": "Cafe Naderi's Instagram profile",
+      "credit": "@nadericafe"
+    }
+  ],
+  "description": "A legendary 1940s literary retreat on Jomhouri Avenue — once Sadegh Hedayat's regular haunt. Classic, unhurried service in a room that hasn't tried very hard to modernize, on purpose.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

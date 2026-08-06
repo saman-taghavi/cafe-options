@@ -1,0 +1,31 @@
+{
+  "id": "cafe-nazdik-karimkhan",
+  "name": "Cafe Nazdik",
+  "slug": "cafe-nazdik-karimkhan",
+  "location": {
+    "neighborhood": "Karimkhan",
+    "arrondissement": 6,
+    "address": "Karimkhan Blvd, near the bookshops, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Nazdik+Karimkhan+Boulevard+Tehran"
+  },
+  "vibes": [
+    "reading",
+    "vintage"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/cafenazdikketab/",
+      "alt": "Cafe Nazdik's Instagram profile",
+      "credit": "@cafenazdikketab"
+    }
+  ],
+  "description": "A bookstore-loft cafe overlooking Karimkhan's book shops — popular with writers and artists who'd rather read than scroll. Good espresso, better people-watching from the window seats.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

@@ -63,7 +63,7 @@ export function AmbientCanvas({
         dpr={dpr}
         gl={{ alpha: true, antialias: true, powerPreference: 'low-power' }}
         camera={{ position: [0, 0, 6], fov: 45 }}
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
       >
         <ambientLight intensity={0.9} />
         <pointLight position={[3, 3, 4]} intensity={0.6} color="#f4d7da" />

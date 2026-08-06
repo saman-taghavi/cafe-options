@@ -1,0 +1,31 @@
+{
+  "id": "cafe-godot-vanak",
+  "name": "Cafe Godot",
+  "slug": "cafe-godot-vanak",
+  "location": {
+    "neighborhood": "Vanak",
+    "arrondissement": 3,
+    "address": "Gandi Shopping Center, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Godot+Gandi+Shopping+Center+Tehran"
+  },
+  "vibes": [
+    "reading",
+    "vintage"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/godot_cafe/",
+      "alt": "Cafe Godot's Instagram profile",
+      "credit": "@godot_cafe"
+    }
+  ],
+  "description": "A theatre-themed literary hub inside the Gandi Shopping Center. Named after the play, unsurprisingly full of people who'll get the reference — artisanal filter coffee, unhurried tables.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

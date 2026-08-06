@@ -1,0 +1,31 @@
+{
+  "id": "gol-rezaieh-30tir",
+  "name": "Gol Rezaieh",
+  "slug": "gol-rezaieh-30tir",
+  "location": {
+    "neighborhood": "Downtown",
+    "arrondissement": 12,
+    "address": "30th Tir St, opposite the Glass & Ceramics Museum (Abgineh), Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Gol+Rezaieh+Cafe+30th+Tir+Street+Tehran"
+  },
+  "vibes": [
+    "vintage",
+    "reading"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/golerezaieh/",
+      "alt": "Gol Rezaieh's Instagram profile",
+      "credit": "@golerezaieh"
+    }
+  ],
+  "description": "A 70-plus-year institution across from the Glass & Ceramics Museum — stained glass, worn wood, and the ghosts of decades of intellectual conversation. History over hurry; go for the atmosphere, not the wifi.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "dorsa-cafe-elahieh",
+  "name": "Dorsa Café",
+  "slug": "dorsa-cafe-elahieh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "Dorsa Home, Elahiyeh, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Dorsa+Cafe+Dorsa+Home+Elahiyeh+Tehran"
+  },
+  "vibes": [
+    "minimalist",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/dorsacafe/",
+      "alt": "Dorsa Café's Instagram profile",
+      "credit": "@dorsacafe"
+    }
+  ],
+  "description": "A high-fashion lounge tucked inside a leather-goods concept space in Elahiyeh. Polished, quiet, a little glamorous — dress up slightly, this one has an audience.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

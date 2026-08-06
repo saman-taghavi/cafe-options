@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Coffee, Heart, X } from 'lucide-react'
 import { SwipeCard } from './SwipeCard'
@@ -28,6 +28,20 @@ export function SwipeDeck({
   const nopeOpacity = useTransform(dragX, [-110, -16], [1, 0])
   const wasDragged = useRef(false)
   const { play } = useSound()
+
+  // `cafes` is a fresh array reference on every filter recompute even when
+  // its actual contents haven't changed (e.g. hearting a card while a vibe
+  // filter is active). Only reset the deck when the underlying pool of
+  // cafes truly changes — otherwise switching to "My Shortlist" after
+  // swiping deep into the full deck left `index` stuck past the new
+  // (much shorter) list, showing "No more cafes" instead of the shortlist.
+  const poolKey = useMemo(() => cafes.map(c => c.id).join('|'), [cafes])
+  useEffect(() => {
+    setIndex(0)
+    setFlingDir(null)
+    dragX.set(0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [poolKey])
 
   const total = cafes.length
 

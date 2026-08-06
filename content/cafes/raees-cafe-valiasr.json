@@ -1,0 +1,31 @@
+{
+  "id": "raees-cafe-valiasr",
+  "name": "Raees Café",
+  "slug": "raees-cafe-valiasr",
+  "location": {
+    "neighborhood": "Valiasr",
+    "arrondissement": 6,
+    "address": "Jordan / Valiasr corridor, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Raees+Coffee+Valiasr+Tehran"
+  },
+  "vibes": [
+    "casual",
+    "grab-and-go"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": false
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/raeescoffee/",
+      "alt": "Raees Coffee's Instagram profile",
+      "credit": "@raeescoffee"
+    }
+  ],
+  "description": "A dependable commercial roaster along the Valiasr corridor. Nothing fussy — solid dark-roast espresso for when you just need a good coffee between errands.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

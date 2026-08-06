@@ -1,0 +1,31 @@
+{
+  "id": "bal-cafe-fereshteh",
+  "name": "Bal Café",
+  "slug": "bal-cafe-fereshteh",
+  "location": {
+    "neighborhood": "Fereshteh",
+    "arrondissement": 1,
+    "address": "Fereshteh St, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Bal+Cafe+Fereshteh+Street+Tehran"
+  },
+  "vibes": [
+    "scandi",
+    "casual"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/balcafe/",
+      "alt": "Bal Café's Instagram profile",
+      "credit": "@balcafe"
+    }
+  ],
+  "description": "Clean Scandinavian-warm wood interiors on Fereshteh, with an all-day breakfast menu built to pair with specialty coffee. Bright, calm, easy to talk in.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

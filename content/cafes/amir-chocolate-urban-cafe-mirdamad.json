@@ -1,0 +1,31 @@
+{
+  "id": "amir-chocolate-urban-cafe-mirdamad",
+  "name": "Amir Chocolate Urban Cafe",
+  "slug": "amir-chocolate-urban-cafe-mirdamad",
+  "location": {
+    "neighborhood": "Mirdamad",
+    "arrondissement": 3,
+    "address": "Mirdamad Blvd, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Amir+Chocolate+Urban+Cafe+Mirdamad+Boulevard+Tehran"
+  },
+  "vibes": [
+    "casual",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/amirchocolate_official/",
+      "alt": "Amir Chocolate's Instagram profile",
+      "credit": "@amirchocolate_official"
+    }
+  ],
+  "description": "A removable glass facade folds away so the interior spills right onto the Mirdamad sidewalk. Chocolate-forward menu, easy people-watching, low-key date energy.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

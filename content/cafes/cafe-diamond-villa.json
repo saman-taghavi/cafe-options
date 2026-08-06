@@ -1,0 +1,31 @@
+{
+  "id": "cafe-diamond-villa",
+  "name": "Cafe Diamond",
+  "slug": "cafe-diamond-villa",
+  "location": {
+    "neighborhood": "Downtown",
+    "arrondissement": 11,
+    "address": "Najatollahi (Villa) St, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Diamond+Najatollahi+Villa+Street+Tehran"
+  },
+  "vibes": [
+    "vintage",
+    "hidden"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/cafediamond/",
+      "alt": "Cafe Diamond's Instagram profile",
+      "credit": "@cafediamond"
+    }
+  ],
+  "description": "A restored 1950s cinema/house on Villa Street — high brick arches, a massive central courtyard, and enough scale that you won't feel like you're overhearing every other table's conversation.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

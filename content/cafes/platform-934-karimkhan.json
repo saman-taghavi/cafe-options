@@ -1,0 +1,31 @@
+{
+  "id": "platform-934-karimkhan",
+  "name": "Platform 9.3.4",
+  "slug": "platform-934-karimkhan",
+  "location": {
+    "neighborhood": "Karimkhan",
+    "arrondissement": 6,
+    "address": "Karim Khan Zand St, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Platform+9.3.4+Cafe+Karim+Khan+Zand+Street+Tehran"
+  },
+  "vibes": [
+    "hidden",
+    "casual"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/platform9.3.4/",
+      "alt": "Platform 9.3.4's Instagram profile",
+      "credit": "@platform9.3.4"
+    }
+  ],
+  "description": "An immersive Harry Potter-themed cafe on Karim Khan Zand St — full Diagon Alley decor commitment. Playful and a little theatrical; good if you both grew up on the books.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "lamiz-tajrish",
+  "name": "Lamiz Coffee - Tajrish",
+  "slug": "lamiz-tajrish",
+  "location": {
+    "neighborhood": "Tajrish",
+    "arrondissement": 1,
+    "address": "Tajrish Square, near Ghaem Center, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Lamiz+Coffee+Tajrish+Square+Tehran"
+  },
+  "vibes": [
+    "casual",
+    "grab-and-go"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": true,
+    "food": false
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/lamizcoffee/",
+      "alt": "Lamiz Coffee's Instagram profile",
+      "credit": "@lamizcoffee"
+    }
+  ],
+  "description": "The Tajrish Square branch of Tehran's specialty coffee chain. High-footfall, reliable espresso, easy to duck into before or after wandering the bazaar next door.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

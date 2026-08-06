@@ -1,0 +1,31 @@
+{
+  "id": "beano-cafe-tajrish",
+  "name": "Beano Cafe",
+  "slug": "beano-cafe-tajrish",
+  "location": {
+    "neighborhood": "Tajrish",
+    "arrondissement": 1,
+    "address": "Tajrish, North Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Beano+Cafe+Bakery+Tajrish+Tehran"
+  },
+  "vibes": [
+    "roastery",
+    "specialty"
+  ],
+  "features": {
+    "wifi": true,
+    "plugs": true,
+    "terrace": false,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/beano.cafebakery/",
+      "alt": "Beano Cafe Bakery's Instagram profile",
+      "credit": "@beano.cafebakery"
+    }
+  ],
+  "description": "A contemporary roastery in Tajrish with a pour-over bar built around rotating single-origin micro-lots. Bakery case up front, coffee nerdery in the back.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}

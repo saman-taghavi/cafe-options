@@ -1,24 +1,41 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Confetti from 'react-confetti'
-import { CheckCircle2, Copy, Send, Heart, Loader2, Sparkles } from 'lucide-react'
+import { CheckCircle2, Copy, Send, Heart, Loader2, Sparkles, CalendarHeart, Clock } from 'lucide-react'
 import { type Cafe } from '../../lib/schema/cafe'
 import { useSound } from '../../hooks/useSound'
 import { DateCard } from './DateCard'
+
+function formatWhen(date: string, time: string) {
+  if (!date) return ''
+  const [y, m, d] = date.split('-').map(Number)
+  const dateObj = new Date(y, (m ?? 1) - 1, d ?? 1)
+  const dateLabel = dateObj.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' })
+  if (!time) return dateLabel
+  const [hh, mm] = time.split(':').map(Number)
+  const timeObj = new Date(y, (m ?? 1) - 1, d ?? 1, hh ?? 0, mm ?? 0)
+  const timeLabel = timeObj.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })
+  return `${dateLabel} · ${timeLabel}`
+}
 
 export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () => void }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [copied, setCopied] = useState(false)
   const [note, setNote] = useState('')
+  const [plannedDate, setPlannedDate] = useState('')
+  const [plannedTime, setPlannedTime] = useState('')
   const { play } = useSound()
+
+  const whenLabel = formatWhen(plannedDate, plannedTime)
 
   const handlePick = async () => {
     setStatus('sending')
     try {
       const noteLine = note.trim() ? `\nHer note: "${note.trim()}"` : ''
+      const whenLine = whenLabel ? `\nWhen: ${whenLabel}` : ''
       const response = await fetch('https://ntfy.sh/saman-cafe-options-78ro0urem6', {
         method: 'POST',
-        body: `She picked ${cafe.name}! 🎉${noteLine}`,
+        body: `She picked ${cafe.name}! 🎉${whenLine}${noteLine}`,
         headers: {
           'Title': 'New Cafe Date Picked!',
           'Tags': 'coffee,heart',
@@ -33,7 +50,13 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
         const history = historyJson ? JSON.parse(historyJson) : []
         // Optional logic: filter out if already exists, or just prepend
         const filteredHistory = history.filter((h: any) => h.id !== cafe.id)
-        filteredHistory.unshift({ id: cafe.id, name: cafe.name, date: new Date().toISOString(), note: note.trim() || undefined })
+        filteredHistory.unshift({
+          id: cafe.id,
+          name: cafe.name,
+          date: new Date().toISOString(),
+          note: note.trim() || undefined,
+          plannedFor: plannedDate ? { date: plannedDate, time: plannedTime || undefined } : undefined,
+        })
         localStorage.setItem('cafe-options:pick-history', JSON.stringify(filteredHistory))
       } catch (e) {}
 
@@ -45,8 +68,9 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
   }
 
   const copyToClipboard = () => {
+    const whenLine = whenLabel ? `\n${whenLabel}` : ''
     const noteLine = note.trim() ? `\n"${note.trim()}"` : ''
-    navigator.clipboard.writeText(`Hey Saman, let's go to ${cafe.name}!${noteLine}\n${cafe.location.mapsUrl}`)
+    navigator.clipboard.writeText(`Hey Saman, let's go to ${cafe.name}!${whenLine}${noteLine}\n${cafe.location.mapsUrl}`)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -101,11 +125,44 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
           transition={{ delay: 0.15 }}
           className="w-full space-y-4"
         >
+          <div>
+            <p className="text-sm font-medium text-neutral-500 mb-2 flex items-center gap-1.5">
+              <CalendarHeart className="w-4 h-4" /> When should we go?
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="relative">
+                <input
+                  type="date"
+                  value={plannedDate}
+                  onChange={e => setPlannedDate(e.target.value)}
+                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-all"
+                />
+              </div>
+              <div className="relative">
+                <input
+                  type="time"
+                  value={plannedTime}
+                  onChange={e => setPlannedTime(e.target.value)}
+                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-all"
+                />
+              </div>
+            </div>
+            {whenLabel && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-sm text-rose-500 mt-2 flex items-center gap-1.5 font-medium"
+              >
+                <Clock className="w-3.5 h-3.5" /> {whenLabel}
+              </motion.p>
+            )}
+          </div>
+
           <div className="relative">
             <textarea
               value={note}
               onChange={e => setNote(e.target.value)}
-              placeholder="Say something to him — optional (“Saturday morning? window seat?”)"
+              placeholder="Say something to him — optional (“window seat, please?”)"
               rows={2}
               maxLength={180}
               className="w-full resize-none px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-all font-script text-lg"
@@ -146,7 +203,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
             colors={['#e8b4b8', '#c04a5a', '#c5d1a5', '#d9a94e', '#fffdf8']}
           />
 
-          <DateCard cafe={cafe} note={note} />
+          <DateCard cafe={cafe} note={note} when={whenLabel} />
 
           <div className="bg-green-50 text-green-700 p-4 rounded-2xl flex items-center gap-3 w-full mt-6 mb-2">
             <CheckCircle2 className="w-6 h-6 shrink-0" />

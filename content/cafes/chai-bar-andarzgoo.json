@@ -1,0 +1,31 @@
+{
+  "id": "chai-bar-andarzgoo",
+  "name": "Chai Bar",
+  "slug": "chai-bar-andarzgoo",
+  "location": {
+    "neighborhood": "Andarzgoo",
+    "arrondissement": 1,
+    "address": "Salimi St (north side), Andarzgoo, Tehran",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Chai+Bar+Salimi+Street+Andarzgoo+Tehran"
+  },
+  "vibes": [
+    "vintage",
+    "date-spot"
+  ],
+  "features": {
+    "wifi": false,
+    "plugs": false,
+    "terrace": true,
+    "food": true
+  },
+  "media": [
+    {
+      "url": "https://www.instagram.com/chaibartehran/",
+      "alt": "Chai Bar's Instagram profile",
+      "credit": "@chaibartehran"
+    }
+  ],
+  "description": "A Qajar-era garden courtyard turned tea-and-coffee house on Salimi Street. Traditional demnoosh infusions sit alongside modern espresso under old trees — slow, shaded, and built for lingering rather than laptops.",
+  "status": "active",
+  "addedAt": "2026-08-06T00:00:00.000Z"
+}
