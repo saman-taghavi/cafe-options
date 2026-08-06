@@ -58,7 +58,7 @@ export function CafeSheet({
     <Drawer.Root open={open} onOpenChange={onOpenChange}>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40 z-50 backdrop-blur-sm" />
-        <Drawer.Content className="bg-white flex flex-col rounded-t-[32px] mt-24 max-h-[90vh] fixed bottom-0 left-0 right-0 z-50 overflow-hidden outline-none shadow-sheet">
+        <Drawer.Content className="bg-white flex flex-col rounded-t-[32px] mt-24 max-h-[90dvh] fixed bottom-0 left-0 right-0 z-50 overflow-hidden outline-none shadow-sheet">
           <div className="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-neutral-300 rounded-full z-10" />
 
           <motion.button

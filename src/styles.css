@@ -53,6 +53,19 @@
   box-sizing: border-box;
 }
 
+/* This app has exactly one theme (warm paper/cream, always light) — it
+   never adapts to system dark mode. Without telling the browser that,
+   a phone in Dark Mode will still auto-dark-style native form controls
+   (inputs, textareas, date/time pickers) — swapping in a light/white
+   default TEXT color while our CSS still paints a light BACKGROUND,
+   which renders as invisible white-on-near-white typing. This is the
+   single most common cause of "I can't see what I'm typing" reports
+   on iOS Safari specifically. Declaring the scheme forces every native
+   control back to its light-mode rendering regardless of OS setting. */
+:root {
+  color-scheme: light;
+}
+
 html,
 body,
 #app {

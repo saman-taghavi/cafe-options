@@ -138,7 +138,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
                   type="date"
                   value={plannedDate}
                   onChange={e => setPlannedDate(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
+                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
                 />
               </div>
               <div className="relative">
@@ -146,7 +146,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
                   type="time"
                   value={plannedTime}
                   onChange={e => setPlannedTime(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
+                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
                 />
               </div>
             </div>
@@ -168,7 +168,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
               placeholder="Say something to him — optional (“window seat, please?”)"
               rows={2}
               maxLength={180}
-              className="w-full resize-none px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all font-script text-lg"
+              className="w-full resize-none px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-ink placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all font-script text-lg"
             />
           </div>
 

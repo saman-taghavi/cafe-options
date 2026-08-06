@@ -13,8 +13,13 @@ export const Route = createRootRoute({
         charSet: 'utf-8',
       },
       {
+        // interactive-widget=resizes-content asks the browser to shrink
+        // the viewport (rather than overlay) when the on-screen keyboard
+        // opens — Chrome/Android honors it; harmless where unsupported.
+        // Paired with dvh units on the drawer, this is what keeps the
+        // sheet from jumping/clipping oddly once a text field is focused.
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        content: 'width=device-width, initial-scale=1, interactive-widget=resizes-content',
       },
       {
         name: 'robots',

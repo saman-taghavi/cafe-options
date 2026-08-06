@@ -117,7 +117,7 @@ export function AuthGate({ children }: { children: React.ReactNode }) {
                   setError(false)
                 }}
                 placeholder="passcode"
-                className={`w-full px-4 py-3.5 rounded-2xl border text-center text-xl font-script tracking-widest bg-cream/60 backdrop-blur-sm focus:outline-none focus:ring-2 transition-all placeholder:font-body placeholder:text-base placeholder:tracking-normal ${
+                className={`w-full px-4 py-3.5 rounded-2xl border text-center text-xl text-ink font-script tracking-widest bg-cream/60 backdrop-blur-sm focus:outline-none focus:ring-2 transition-all placeholder:font-body placeholder:text-base placeholder:tracking-normal ${
                   error
                     ? 'border-red-300 focus:ring-red-200 bg-red-50/60'
                     : 'border-blush-soft focus:border-blush focus:ring-blush-soft/60'
