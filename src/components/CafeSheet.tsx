@@ -37,7 +37,7 @@ export function CafeSheet({
 
   const instagramMedia = cafe?.media.find(m => m.url.includes('instagram.com'))
 
-  // Subtle Ken-Burns parallax on the hero image as she scrolls the sheet —
+  // Subtle Ken-Burns parallax on the hero image as you scroll the sheet —
   // the photo drifts and breathes instead of sitting there static.
   const { scrollY } = useScroll({ container: scrollRef })
   const heroY = useTransform(scrollY, [0, 300], [0, 90])

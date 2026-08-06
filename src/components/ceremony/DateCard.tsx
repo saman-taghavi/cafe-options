@@ -4,8 +4,8 @@ import { type Cafe } from '../../lib/schema/cafe'
 
 /**
  * The souvenir moment — a screenshot-worthy card that closes out the pick
- * ceremony. Gradient-shimmer border, her note in a handwritten font,
- * couple motif. This is the thing she keeps.
+ * ceremony. Gradient-shimmer border, your note in a handwritten font,
+ * couple motif. This is the thing you keep.
  */
 export function DateCard({ cafe, note, when }: { cafe: Cafe; note?: string; when?: string }) {
   const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '')

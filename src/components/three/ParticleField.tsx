@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const WARM_TONES = ['#e8b4b8', '#c5d1a5', '#f4d7da', '#e6c874', '#8a9a5b']
+const WARM_TONES = ['#f2a6ac', '#d7e2ae', '#f9d9e2', '#ffd98c', '#a8c9d6']
 
 function makeSoftDot(): THREE.CanvasTexture {
   const size = 64
@@ -30,10 +30,13 @@ export function ParticleField({ count = 90 }: { count?: number }) {
   const pointsRef = useRef<THREE.Points>(null)
   const dotTexture = useMemo(() => makeSoftDot(), [])
 
-  const { positions, colors, speeds } = useMemo(() => {
+  const { positions, colors, speeds, baseColors, twinklePhase, twinkleSpeed } = useMemo(() => {
     const positions = new Float32Array(count * 3)
     const colors = new Float32Array(count * 3)
+    const baseColors = new Float32Array(count * 3)
     const speeds = new Float32Array(count)
+    const twinklePhase = new Float32Array(count)
+    const twinkleSpeed = new Float32Array(count)
     const color = new THREE.Color()
 
     for (let i = 0; i < count; i++) {
@@ -42,27 +45,42 @@ export function ParticleField({ count = 90 }: { count?: number }) {
       positions[i * 3 + 2] = (Math.random() - 0.5) * 6 - 2
 
       color.set(WARM_TONES[i % WARM_TONES.length])
+      baseColors[i * 3] = color.r
+      baseColors[i * 3 + 1] = color.g
+      baseColors[i * 3 + 2] = color.b
       colors[i * 3] = color.r
       colors[i * 3 + 1] = color.g
       colors[i * 3 + 2] = color.b
 
       speeds[i] = 0.08 + Math.random() * 0.18
+      twinklePhase[i] = Math.random() * Math.PI * 2
+      twinkleSpeed[i] = 0.6 + Math.random() * 0.9
     }
 
-    return { positions, colors, speeds }
+    return { positions, colors, speeds, baseColors, twinklePhase, twinkleSpeed }
   }, [count])
+
+  const clock = useRef(0)
 
   useFrame((_, delta) => {
     const points = pointsRef.current
     if (!points) return
+    clock.current += delta
     const posAttr = points.geometry.attributes.position as THREE.BufferAttribute
+    const colorAttr = points.geometry.attributes.color as THREE.BufferAttribute
     for (let i = 0; i < count; i++) {
       const y = posAttr.getY(i) + speeds[i] * delta
       posAttr.setY(i, y > 4.6 ? -4.6 : y)
       const x = posAttr.getX(i) + Math.sin((y + i) * 0.6) * delta * 0.05
       posAttr.setX(i, x)
+
+      // Gentle per-mote twinkle — soot-sprite aliveness rather than a
+      // uniformly glowing dust cloud.
+      const glow = 0.55 + 0.45 * Math.sin(clock.current * twinkleSpeed[i] + twinklePhase[i])
+      colorAttr.setXYZ(i, baseColors[i * 3] * glow, baseColors[i * 3 + 1] * glow, baseColors[i * 3 + 2] * glow)
     }
     posAttr.needsUpdate = true
+    colorAttr.needsUpdate = true
     points.rotation.y += delta * 0.015
   })
 

@@ -1,8 +1,12 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing'
+import { EffectComposer, Bloom, Vignette, GodRays } from '@react-three/postprocessing'
+import * as THREE from 'three'
 import { ParticleField } from './ParticleField'
 import { FloatingHearts } from './FloatingHearts'
+import { CloudCards } from './CloudCards'
+import { SkyBackdrop } from './SkyBackdrop'
+import { SunMesh } from './SunMesh'
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 
 function PointerParallax({ strength = 0.4 }: { strength?: number }) {
@@ -28,10 +32,16 @@ function PointerParallax({ strength = 0.4 }: { strength?: number }) {
 }
 
 /**
- * The ambient "golden-hour scrapbook" background: warm drifting motes +
- * a few soft heart gems, with gentle pointer parallax. Mounted client-side
- * only, skipped entirely under reduced-motion or on very small/low-power
- * screens where it would just be battery drain, not delight.
+ * The ambient "Howl's-sky" background: a hand-painted gradient wash,
+ * individual flat cloud cards drifting past (warm near, cool-grey far —
+ * the actual production technique for this look, not a lit volumetric
+ * render — see the plan notes this was built from), soft god-ray light
+ * shafts, and a scatter of twinkling spirit-mote particles and paper
+ * hearts. Every element is deliberately unlit (MeshBasicMaterial /
+ * SpriteMaterial / PointsMaterial) — there are no scene lights, because
+ * nothing here reads them; depth instead comes from fog and from each
+ * element's own baked-in tint. Mounted client-side only, skipped
+ * entirely under reduced-motion or on very small/low-power screens.
  */
 export function AmbientCanvas({
   className,
@@ -43,6 +53,7 @@ export function AmbientCanvas({
   particleCount?: number
 }) {
   const [mounted, setMounted] = useState(false)
+  const [sun, setSun] = useState<THREE.Mesh | null>(null)
   const reducedMotion = usePrefersReducedMotion()
 
   useEffect(() => {
@@ -52,6 +63,7 @@ export function AmbientCanvas({
   const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 640
   const resolvedParticles = particleCount ?? (isSmallScreen ? 40 : 90)
   const resolvedHearts = isSmallScreen ? Math.min(2, heartCount) : heartCount
+  const resolvedClouds = isSmallScreen ? 6 : 10
 
   const dpr = useMemo<[number, number]>(() => (isSmallScreen ? [1, 1.25] : [1, 1.75]), [isSmallScreen])
 
@@ -65,20 +77,31 @@ export function AmbientCanvas({
         camera={{ position: [0, 0, 6], fov: 45 }}
         style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
       >
-        <ambientLight intensity={0.9} />
-        <pointLight position={[3, 3, 4]} intensity={0.6} color="#f4d7da" />
+        {/* Distance fade toward the sky's cool tone — the documented
+            "fog for depth" technique, standing in for the lighting/
+            shadowing that made the previous attempt muddy. */}
+        <fog attach="fog" args={['#ece3ee', 10, 24]} />
         <Suspense fallback={null}>
+          <SkyBackdrop />
+          <CloudCards count={resolvedClouds} />
+          <SunMesh onReady={setSun} />
           <ParticleField count={resolvedParticles} />
           <FloatingHearts count={resolvedHearts} />
-          {!isSmallScreen && (
+          {!isSmallScreen && sun && (
             <EffectComposer multisampling={0}>
-              <Bloom
-                intensity={0.35}
-                luminanceThreshold={0.45}
-                luminanceSmoothing={0.6}
-                mipmapBlur
+              <GodRays
+                sun={sun}
+                samples={24}
+                density={0.7}
+                decay={0.9}
+                weight={0.2}
+                exposure={0.12}
+                clampMax={0.6}
+                kernelSize={2}
+                blur
               />
-              <Vignette eskil={false} offset={0.25} darkness={0.3} />
+              <Bloom intensity={0.3} luminanceThreshold={0.62} luminanceSmoothing={0.6} mipmapBlur />
+              <Vignette eskil={false} offset={0.3} darkness={0.22} />
             </EffectComposer>
           )}
         </Suspense>

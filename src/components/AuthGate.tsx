@@ -5,7 +5,7 @@ import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { useSound } from '../hooks/useSound'
 
 // The three.js/postprocessing bundle is meaningfully heavy — split it out
-// of the critical path so the gate itself (what she sees first) paints instantly.
+// of the critical path so the gate itself (the first thing you see) paints instantly.
 const AmbientCanvas = lazy(() => import('./three/AmbientCanvas').then(m => ({ default: m.AmbientCanvas })))
 
 export function AuthGate({ children }: { children: React.ReactNode }) {
@@ -93,10 +93,10 @@ export function AuthGate({ children }: { children: React.ReactNode }) {
             </motion.div>
 
             <h1 className="text-3xl font-display text-ink mb-2">
-              For <span className="font-script text-4xl text-mocha">her</span> eyes only
+              Just for <span className="font-script text-4xl text-mocha">us</span>
             </h1>
             <p className="text-ink-muted mb-9 leading-relaxed">
-              A little something I've been putting together, just for us.
+              A little something I've been building for the two of us.
               <br />
               You know the word.
             </p>
