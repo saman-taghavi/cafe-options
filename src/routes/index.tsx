@@ -157,8 +157,8 @@ function Home() {
         {(shortlist.size > 0 || history.length > 0) && (
           <div className="flex flex-wrap gap-3 mt-4">
             {shortlist.size > 0 && (
-              <button 
-                onClick={() => setSelectedVibe(selectedVibe === 'shortlist' ? null : 'shortlist')}
+              <button
+                onClick={() => { play('tick'); setSelectedVibe(selectedVibe === 'shortlist' ? null : 'shortlist') }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 flex items-center gap-2 ${
                   selectedVibe === 'shortlist'
                     ? 'bg-coral text-white shadow-md'
@@ -171,8 +171,8 @@ function Home() {
             )}
             
             {history.length > 0 && (
-              <button 
-                onClick={() => setSelectedVibe(selectedVibe === 'history' ? null : 'history')}
+              <button
+                onClick={() => { play('tick'); setSelectedVibe(selectedVibe === 'history' ? null : 'history') }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all active:scale-95 flex items-center gap-2 ${
                   selectedVibe === 'history'
                     ? 'bg-emerald-500 text-white shadow-md' 
@@ -208,7 +208,7 @@ function Home() {
                 filtered.map(cafe => (
                   <motion.div
                     key={cafe.id}
-                    onClick={() => setActiveCafe(cafe)}
+                    onClick={() => { play('page'); setActiveCafe(cafe) }}
                     className="cursor-pointer"
                     variants={{
                       hidden: { opacity: 0, y: 24, scale: 0.96 },

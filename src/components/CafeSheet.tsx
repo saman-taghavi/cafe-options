@@ -8,6 +8,7 @@ import { InstagramEmbed } from './InstagramEmbed'
 import { MapPeek } from './MapPeek'
 import { WebsiteCard } from './WebsiteCard'
 import { FloatingPetals } from './FloatingPetals'
+import { useSound } from '../hooks/useSound'
 
 const sectionContainer = {
   hidden: {},
@@ -30,6 +31,7 @@ export function CafeSheet({
 }) {
   const [showCeremony, setShowCeremony] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
+  const { play } = useSound()
 
   // Fix base routing for local dev vs GH Pages
   const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '')
@@ -60,7 +62,7 @@ export function CafeSheet({
           <div className="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-neutral-300 rounded-full z-10" />
 
           <motion.button
-            onClick={() => onOpenChange(false)}
+            onClick={() => { play('release'); onOpenChange(false) }}
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.9 }}
             className="absolute top-4 right-4 p-2 bg-white/50 backdrop-blur-md rounded-full text-neutral-600 z-10"
@@ -164,7 +166,7 @@ export function CafeSheet({
 
                         <motion.button
                           variants={sectionItem}
-                          onClick={() => setShowCeremony(true)}
+                          onClick={() => { play('chime'); setShowCeremony(true) }}
                           whileHover={{ scale: 1.015 }}
                           whileTap={{ scale: 0.98 }}
                           className="relative w-full py-4 bg-coral text-white rounded-2xl font-medium text-lg flex items-center justify-center gap-2 overflow-hidden group"
@@ -177,6 +179,7 @@ export function CafeSheet({
                           href={cafe.location.mapsUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => play('press')}
                           className="w-full py-4 bg-neutral-100 text-neutral-900 rounded-2xl font-medium text-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98]"
                         >
                           <Navigation className="w-5 h-5" />

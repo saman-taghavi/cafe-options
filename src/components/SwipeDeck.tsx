@@ -60,7 +60,7 @@ export function SwipeDeck({
           we went through all the cafes in Tehran I think!
         </p>
         <button
-          onClick={() => setIndex(0)}
+          onClick={() => { play('ready'); setIndex(0) }}
           className="bg-neutral-900 text-white px-8 py-3.5 rounded-full font-medium shadow-sm hover:bg-neutral-800 transition-all active:scale-[0.98]"
         >
           Start over
@@ -76,7 +76,10 @@ export function SwipeDeck({
     if (dir === 'right') {
       onToggleShortlist(activeCafe.id, null)
       play('sparkle')
-    } else onDismiss(activeCafe)
+    } else {
+      onDismiss(activeCafe)
+      play('whisper')
+    }
     setIndex(i => i + 1)
     setFlingDir(null)
     dragX.set(0)
@@ -109,6 +112,7 @@ export function SwipeDeck({
       wasDragged.current = false
       return
     }
+    play('page')
     onPick(activeCafe)
   }
 

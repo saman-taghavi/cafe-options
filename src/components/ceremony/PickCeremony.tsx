@@ -29,6 +29,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
   const whenLabel = formatWhen(plannedDate, plannedTime)
 
   const handlePick = async () => {
+    play('press')
     setStatus('sending')
     try {
       const noteLine = note.trim() ? `\nHer note: "${note.trim()}"` : ''
@@ -64,6 +65,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
       play('success')
     } catch {
       setStatus('error')
+      play('error')
     }
   }
 
@@ -72,6 +74,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
     const noteLine = note.trim() ? `\n"${note.trim()}"` : ''
     navigator.clipboard.writeText(`Hey Saman, let's go to ${cafe.name}!${whenLine}${noteLine}\n${cafe.location.mapsUrl}`)
     setCopied(true)
+    play('success')
     setTimeout(() => setCopied(false), 2000)
   }
 
@@ -212,7 +215,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
           <p className="text-xs text-neutral-400 flex items-center gap-1 mb-4">
             <Sparkles className="w-3 h-3" /> Tip: screenshot the card above to keep it
           </p>
-          <button onClick={onComplete} className="text-neutral-500 font-medium py-2">Close</button>
+          <button onClick={() => { play('release'); onComplete() }} className="text-neutral-500 font-medium py-2">Close</button>
         </motion.div>
       )}
 
@@ -235,7 +238,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
           </button>
 
           <div className="flex justify-center">
-            <button onClick={() => setStatus('idle')} className="text-neutral-500 text-sm mt-4">Try again</button>
+            <button onClick={() => { play('press'); setStatus('idle') }} className="text-neutral-500 text-sm mt-4">Try again</button>
           </div>
         </motion.div>
       )}

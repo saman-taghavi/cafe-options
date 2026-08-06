@@ -40,6 +40,8 @@ export function SwipeCard({
     if (!shortlisted) {
       setBurstKey(k => k + 1)
       play('sparkle')
+    } else {
+      play('whisper')
     }
     onToggleShortlist?.(e)
   }

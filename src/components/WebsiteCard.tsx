@@ -1,4 +1,5 @@
 import { ExternalLink } from 'lucide-react'
+import { useSound } from '../hooks/useSound'
 
 interface WebsitePreview {
   title?: string
@@ -8,11 +9,14 @@ interface WebsitePreview {
 }
 
 export function WebsiteCard({ preview }: { preview: WebsitePreview }) {
+  const { play } = useSound()
+
   return (
-    <a 
+    <a
       href={preview.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => play('press')}
       className="flex flex-col mb-6 bg-white rounded-2xl border border-neutral-100 shadow-sm overflow-hidden active:scale-[0.98] transition-transform"
     >
       {preview.image && (

@@ -68,6 +68,8 @@ export function CafeCard({ cafe, shortlisted = false, onToggleShortlist }: { caf
     if (!shortlisted) {
       setBurstKey(k => k + 1)
       play('sparkle')
+    } else {
+      play('whisper')
     }
     onToggleShortlist?.()
   }
