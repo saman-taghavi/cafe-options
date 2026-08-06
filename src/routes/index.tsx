@@ -4,8 +4,14 @@ import { FilterBar } from '../components/FilterBar'
 import { CafeCard } from '../components/CafeCard'
 import { CafeSheet } from '../components/CafeSheet'
 import { SwipeDeck } from '../components/SwipeDeck'
+import { AnimatedHeadline } from '../components/AnimatedHeadline'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useMemo, useEffect } from 'react'
+import { Volume2, VolumeX } from 'lucide-react'
+import { useState, useMemo, useEffect, Suspense, lazy } from 'react'
+import { useSound } from '../hooks/useSound'
+
+// Split the three.js/postprocessing bundle out of the critical path.
+const AmbientCanvas = lazy(() => import('../components/three/AmbientCanvas').then(m => ({ default: m.AmbientCanvas })))
 
 export const Route = createFileRoute('/')({ 
   component: Home,
@@ -22,6 +28,7 @@ function Home() {
 
   const [history, setHistory] = useState<any[]>([])
   const [viewMode, setViewMode] = useState<'grid' | 'swipe'>('grid')
+  const { enabled: soundOn, toggle: toggleSound, play } = useSound()
 
   useEffect(() => {
     try {
@@ -87,30 +94,60 @@ function Home() {
   }
 
   return (
-    <main className="min-h-[100dvh] p-6 max-w-5xl mx-auto pb-24">
-      <header className="py-6 sm:py-12">
-        <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-ink mb-4 max-w-sm">
-          Where are we going today?
-        </h1>
-        <p className="text-lg text-ink-muted max-w-xl mb-8 font-serif italic">
+    <main className="relative min-h-[100dvh] p-6 max-w-5xl mx-auto pb-24">
+      <Suspense fallback={null}>
+        <AmbientCanvas className="ambient-canvas-host" heartCount={2} particleCount={60} />
+      </Suspense>
+
+      <button
+        onClick={() => {
+          const turningOn = !soundOn
+          toggleSound()
+          if (turningOn) play('ready')
+        }}
+        aria-label={soundOn ? 'Turn sound off' : 'Turn sound on'}
+        title={soundOn ? 'Sound on' : 'Sound off'}
+        className="fixed top-4 right-4 z-20 p-2.5 rounded-full bg-white/80 backdrop-blur-sm shadow-soft text-ink-muted hover:text-ink transition-colors"
+      >
+        {soundOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+      </button>
+
+      <header className="relative py-6 sm:py-12">
+        <AnimatedHeadline
+          text="Where are we going today?"
+          className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-ink mb-4 max-w-sm"
+        />
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-lg text-ink-muted max-w-xl mb-8 font-serif italic"
+        >
           I've hand-picked these spots just for us. Take your time, pick a vibe, and let me know when you've found the one you love.
-        </p>
-        
+        </motion.p>
+
         <div className="flex bg-neutral-100 p-1 rounded-full w-fit mb-6">
-          <button 
-            onClick={() => setViewMode('grid')}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm text-ink' : 'text-neutral-500 hover:text-ink'}`}
-          >
-            Grid
-          </button>
-          <button 
-            onClick={() => setViewMode('swipe')}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === 'swipe' ? 'bg-white shadow-sm text-ink' : 'text-neutral-500 hover:text-ink'}`}
-          >
-            Swipe
-          </button>
+          {(['grid', 'swipe'] as const).map(mode => (
+            <motion.button
+              key={mode}
+              onClick={() => { play('toggle'); setViewMode(mode) }}
+              whileTap={{ scale: 0.94 }}
+              className={`relative px-4 py-1.5 rounded-full text-sm font-medium capitalize ${
+                viewMode === mode ? 'text-ink' : 'text-neutral-500 hover:text-ink'
+              }`}
+            >
+              {viewMode === mode && (
+                <motion.span
+                  layoutId="view-mode-active"
+                  className="absolute inset-0 rounded-full bg-white shadow-sm"
+                  transition={{ type: 'spring', stiffness: 500, damping: 34 }}
+                />
+              )}
+              <span className="relative z-10">{mode}</span>
+            </motion.button>
+          ))}
         </div>
-        
+
         <FilterBar 
           selected={selectedVibe} 
           onSelect={setSelectedVibe} 
@@ -160,20 +197,30 @@ function Home() {
             onPick={setActiveCafe}
           />
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            initial="hidden"
+            animate="show"
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07 } } }}
+          >
             <AnimatePresence mode="popLayout">
               {filtered.length > 0 ? (
                 filtered.map(cafe => (
-                  <div key={cafe.id} onClick={() => setActiveCafe(cafe)} className="cursor-pointer">
-                    <CafeCard 
-                      cafe={cafe} 
+                  <motion.div
+                    key={cafe.id}
+                    onClick={() => setActiveCafe(cafe)}
+                    className="cursor-pointer"
+                    variants={{
+                      hidden: { opacity: 0, y: 24, scale: 0.96 },
+                      show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const } },
+                    }}
+                  >
+                    <CafeCard
+                      cafe={cafe}
                       shortlisted={shortlist.has(cafe.id)}
-                      onToggleShortlist={(e: any) => {
-                        e?.stopPropagation()
-                        toggleShortlist(cafe.id)
-                      }}
+                      onToggleShortlist={() => toggleShortlist(cafe.id)}
                     />
-                  </div>
+                  </motion.div>
                 ))
               ) : (
                 <motion.div 
@@ -186,7 +233,7 @@ function Home() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         )}
       </motion.div>
 

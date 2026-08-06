@@ -13,11 +13,14 @@
   --color-matcha-soft: #c5d1a5;
   --color-mocha: #6b4226;
   --color-cream: #fffdf8;
+  --color-gold: #d9a94e;
+  --color-gold-soft: #f0d9a8;
 
   /* Shadows */
   --shadow-soft: 0 2px 12px rgba(60, 42, 30, 0.08);
   --shadow-card: 0 4px 24px rgba(60, 42, 30, 0.1);
   --shadow-sheet: 0 -4px 32px rgba(60, 42, 30, 0.12);
+  --shadow-glow: 0 0 40px rgba(232, 180, 184, 0.35);
 
   /* Radii */
   --radius-card: 1rem;
@@ -27,6 +30,7 @@
   /* Type scale */
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
 
   /* Spacing scale */
   --space-xs: 0.25rem;
@@ -49,6 +53,10 @@ body,
   min-height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: var(--color-paper);
@@ -56,6 +64,148 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Warm text selection, because even highlighting a sentence should feel
+   like it belongs to this app and not a generic browser default. */
+::selection {
+  background-color: var(--color-blush-soft);
+  color: var(--color-mocha);
+}
+
+/* Quiet, on-theme scrollbar (Webkit) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-blush-soft);
+  border-radius: 999px;
+  border: 2px solid var(--color-paper);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Fixed, full-viewport paper grain — a single tiled SVG noise texture,
+   generated inline so there's no extra image request. Sits above the
+   background but below all content and never intercepts pointer events. */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Ambient 3D canvas host — always behind content, ignores pointer events */
+.ambient-canvas-host {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes drift-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.12);
+  }
+  30% {
+    transform: scale(0.98);
+  }
+  45% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh) translateX(var(--drift, 40px)) rotate(340deg);
+    opacity: 0;
+  }
+}
+
+.animate-drift-float {
+  animation: drift-float 6s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--color-mocha) 0%,
+    var(--color-gold) 45%,
+    var(--color-mocha) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-sweep 5s linear infinite;
+}
+
+/* Respect reduced motion everywhere at once — the escape hatch for every
+   custom animation class above, and for framer-motion consumers checking
+   the same media query via usePrefersReducedMotion(). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-drift-float,
+  .animate-heartbeat,
+  .shimmer-text {
+    animation: none !important;
+  }
+  /* Safety net for any arbitrary-value animate-[...] utility we add later */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 /* Privacy — no indexing */

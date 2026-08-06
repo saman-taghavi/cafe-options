@@ -1,6 +1,10 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Heart, MapPin, Wifi, Zap, Coffee, TreePine } from 'lucide-react'
 import { type Cafe } from '../lib/schema/cafe'
 import { cn } from '../lib/utils/cn'
+import { HeartBurst } from './HeartBurst'
+import { useSound } from '../hooks/useSound'
 
 // Deterministic warm cover-art palette, picked per cafe so the placeholder
 // (we can't hotlink real Instagram photos) still feels designed, not empty.
@@ -29,6 +33,16 @@ export function SwipeCard({
   const theme = themeForCafe(cafe.id)
   const initial = cafe.name.trim().charAt(0).toUpperCase()
   const patternId = `dots-${cafe.id}`
+  const [burstKey, setBurstKey] = useState(0)
+  const { play } = useSound()
+
+  function handleToggle(e: any) {
+    if (!shortlisted) {
+      setBurstKey(k => k + 1)
+      play('sparkle')
+    }
+    onToggleShortlist?.(e)
+  }
 
   // Fix base routing for local dev vs GH Pages
   const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '')
@@ -118,13 +132,19 @@ export function SwipeCard({
             {cafe.features.food && <Coffee className="w-4 h-4" />}
           </div>
 
-          <button
-            onClick={onToggleShortlist}
-            onPointerDown={e => e.stopPropagation()}
-            className="p-2 -m-2 rounded-full text-ink-muted transition-colors hover:text-rose-500"
-          >
-            <Heart className={cn('w-5 h-5 transition-colors', shortlisted && 'fill-rose-500 text-rose-500')} />
-          </button>
+          <div className="relative -m-2 p-2">
+            <HeartBurst burstKey={burstKey} />
+            <motion.button
+              onClick={handleToggle}
+              onPointerDown={e => e.stopPropagation()}
+              whileTap={{ scale: 0.8 }}
+              animate={shortlisted ? { scale: [1, 1.3, 1] } : {}}
+              transition={{ duration: 0.35 }}
+              className="rounded-full text-ink-muted transition-colors hover:text-rose-500"
+            >
+              <Heart className={cn('w-5 h-5 transition-colors', shortlisted && 'fill-rose-500 text-rose-500')} />
+            </motion.button>
+          </div>
         </div>
       </div>
     </div>

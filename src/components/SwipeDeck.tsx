@@ -3,6 +3,7 @@ import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Coffee, Heart, X } from 'lucide-react'
 import { SwipeCard } from './SwipeCard'
 import { type Cafe } from '../lib/schema/cafe'
+import { useSound } from '../hooks/useSound'
 
 const VISIBLE_STACK = 3
 const COMMIT_THRESHOLD = 90
@@ -26,6 +27,7 @@ export function SwipeDeck({
   const likeOpacity = useTransform(dragX, [16, 110], [0, 1])
   const nopeOpacity = useTransform(dragX, [-110, -16], [1, 0])
   const wasDragged = useRef(false)
+  const { play } = useSound()
 
   const total = cafes.length
 
@@ -57,8 +59,10 @@ export function SwipeDeck({
   const stack = cafes.slice(index, index + VISIBLE_STACK)
 
   function commit(dir: 'left' | 'right') {
-    if (dir === 'right') onToggleShortlist(activeCafe.id, null)
-    else onDismiss(activeCafe)
+    if (dir === 'right') {
+      onToggleShortlist(activeCafe.id, null)
+      play('sparkle')
+    } else onDismiss(activeCafe)
     setIndex(i => i + 1)
     setFlingDir(null)
     dragX.set(0)
@@ -173,20 +177,24 @@ export function SwipeDeck({
 
       {/* Tactile controls — same effect as the drag gesture */}
       <div className="flex items-center gap-6 mt-7">
-        <button
+        <motion.button
           onClick={() => triggerSwipe('left')}
           aria-label="Skip this cafe"
-          className="w-14 h-14 rounded-full bg-cream border border-ink/10 shadow-soft flex items-center justify-center text-ink-muted hover:text-mocha hover:border-mocha/30 transition-colors active:scale-90"
+          whileTap={{ scale: 0.85 }}
+          whileHover={{ scale: 1.05 }}
+          className="w-14 h-14 rounded-full bg-cream border border-ink/10 shadow-soft flex items-center justify-center text-ink-muted hover:text-mocha hover:border-mocha/30 transition-colors"
         >
           <X className="w-6 h-6" />
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           onClick={() => triggerSwipe('right')}
           aria-label="Save this cafe"
-          className="w-16 h-16 rounded-full bg-rose-500 shadow-card flex items-center justify-center text-white hover:bg-rose-600 transition-colors active:scale-90"
+          whileTap={{ scale: 0.85 }}
+          whileHover={{ scale: 1.08 }}
+          className="w-16 h-16 rounded-full bg-rose-500 shadow-card flex items-center justify-center text-white hover:bg-rose-600 transition-colors"
         >
           <Heart className="w-7 h-7 fill-white" />
-        </button>
+        </motion.button>
       </div>
     </div>
   )

@@ -17,10 +17,27 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
+        name: 'robots',
+        content: 'noindex, nofollow',
+      },
+      {
         title: 'Where are we going today?',
       },
     ],
     links: [
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossOrigin: 'anonymous',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap',
+      },
       {
         rel: 'stylesheet',
         href: appCss,
@@ -38,9 +55,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <script async src="https://www.instagram.com/embed.js"></script>
       </head>
       <body>
-        <AuthGate>
-          {children}
-        </AuthGate>
+        <div className="grain-overlay" />
+        <div className="relative z-10">
+          <AuthGate>
+            {children}
+          </AuthGate>
+        </div>
         <TanStackDevtools
           config={{
             position: 'bottom-right',
