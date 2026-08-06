@@ -140,9 +140,9 @@ export function SwipeCard({
               whileTap={{ scale: 0.8 }}
               animate={shortlisted ? { scale: [1, 1.3, 1] } : {}}
               transition={{ duration: 0.35 }}
-              className="rounded-full text-ink-muted transition-colors hover:text-rose-500"
+              className="rounded-full text-ink-muted transition-colors hover:text-coral"
             >
-              <Heart className={cn('w-5 h-5 transition-colors', shortlisted && 'fill-rose-500 text-rose-500')} />
+              <Heart className={cn('w-5 h-5 transition-colors', shortlisted && 'fill-coral text-coral')} />
             </motion.button>
           </div>
         </div>

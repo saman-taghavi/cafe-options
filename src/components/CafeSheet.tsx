@@ -167,7 +167,7 @@ export function CafeSheet({
                           onClick={() => setShowCeremony(true)}
                           whileHover={{ scale: 1.015 }}
                           whileTap={{ scale: 0.98 }}
-                          className="relative w-full py-4 bg-rose-500 text-white rounded-2xl font-medium text-lg flex items-center justify-center gap-2 overflow-hidden group"
+                          className="relative w-full py-4 bg-coral text-white rounded-2xl font-medium text-lg flex items-center justify-center gap-2 overflow-hidden group"
                         >
                           <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
                           <span className="relative">Let's go here!</span>

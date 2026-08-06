@@ -128,9 +128,9 @@ export function CafeCard({ cafe, shortlisted = false, onToggleShortlist }: { caf
               whileTap={{ scale: 0.8 }}
               animate={shortlisted ? { scale: [1, 1.3, 1] } : {}}
               transition={{ duration: 0.35 }}
-              className="p-2.5 bg-white/90 backdrop-blur-sm rounded-full text-neutral-600 transition-colors hover:text-red-500 hover:bg-white"
+              className="p-2.5 bg-white/90 backdrop-blur-sm rounded-full text-neutral-600 transition-colors hover:text-coral hover:bg-white"
             >
-              <Heart className={cn("w-5 h-5 transition-colors", shortlisted && "fill-red-500 text-red-500")} />
+              <Heart className={cn("w-5 h-5 transition-colors", shortlisted && "fill-coral text-coral")} />
             </motion.button>
           </div>
         </div>

@@ -36,7 +36,7 @@ export function DateCard({ cafe, note, when }: { cafe: Cafe; note?: string; when
           <div className="p-6 text-center">
             <div className="flex items-center justify-center gap-2 text-mocha mb-3">
               <Coffee className="w-4 h-4" />
-              <Heart className="w-4 h-4 fill-current text-rose-500" />
+              <Heart className="w-4 h-4 fill-current text-coral" />
               <Coffee className="w-4 h-4" />
             </div>
 
@@ -44,7 +44,7 @@ export function DateCard({ cafe, note, when }: { cafe: Cafe; note?: string; when
             <h3 className="text-2xl font-display font-semibold text-ink mb-1">{cafe.name}</h3>
 
             {when && (
-              <p className="text-sm font-medium text-rose-500 mb-3">{when}</p>
+              <p className="text-sm font-medium text-coral mb-3">{when}</p>
             )}
 
             {note?.trim() && (

@@ -98,7 +98,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
               {[0, 1, 2].map(i => (
                 <motion.span
                   key={i}
-                  className="absolute rounded-full border border-rose-300"
+                  className="absolute rounded-full border border-coral/40"
                   initial={{ width: 128, height: 128, opacity: 0.5 }}
                   animate={{ width: 190, height: 190, opacity: 0 }}
                   transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.7, ease: 'easeOut' }}
@@ -109,11 +109,11 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
 
           <motion.div
             onClick={handlePick}
-            className="relative w-32 h-32 bg-rose-50 hover:bg-rose-100 cursor-pointer rounded-full flex items-center justify-center transition-colors shadow-sm active:scale-95 z-10"
+            className="relative w-32 h-32 bg-coral-soft/50 hover:bg-coral-soft cursor-pointer rounded-full flex items-center justify-center transition-colors shadow-sm active:scale-95 z-10"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Heart className="w-12 h-12 text-rose-500 fill-rose-500/20 animate-heartbeat" />
+            <Heart className="w-12 h-12 text-coral fill-coral/20 animate-heartbeat" />
           </motion.div>
         </div>
       )}
@@ -135,7 +135,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
                   type="date"
                   value={plannedDate}
                   onChange={e => setPlannedDate(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-all"
+                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
                 />
               </div>
               <div className="relative">
@@ -143,7 +143,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
                   type="time"
                   value={plannedTime}
                   onChange={e => setPlannedTime(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-all"
+                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
                 />
               </div>
             </div>
@@ -151,7 +151,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-sm text-rose-500 mt-2 flex items-center gap-1.5 font-medium"
+                className="text-sm text-coral mt-2 flex items-center gap-1.5 font-medium"
               >
                 <Clock className="w-3.5 h-3.5" /> {whenLabel}
               </motion.p>
@@ -165,7 +165,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
               placeholder="Say something to him — optional (“window seat, please?”)"
               rows={2}
               maxLength={180}
-              className="w-full resize-none px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-300 transition-all font-script text-lg"
+              className="w-full resize-none px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all font-script text-lg"
             />
           </div>
 

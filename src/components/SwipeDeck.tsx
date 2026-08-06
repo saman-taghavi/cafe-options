@@ -205,7 +205,7 @@ export function SwipeDeck({
           aria-label="Save this cafe"
           whileTap={{ scale: 0.85 }}
           whileHover={{ scale: 1.08 }}
-          className="w-16 h-16 rounded-full bg-rose-500 shadow-card flex items-center justify-center text-white hover:bg-rose-600 transition-colors"
+          className="w-16 h-16 rounded-full bg-coral shadow-card flex items-center justify-center text-white hover:brightness-95 transition-all"
         >
           <Heart className="w-7 h-7 fill-white" />
         </motion.button>

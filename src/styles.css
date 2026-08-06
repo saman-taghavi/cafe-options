@@ -15,6 +15,12 @@
   --color-cream: #fffdf8;
   --color-gold: #d9a94e;
   --color-gold-soft: #f0d9a8;
+  /* Warm storybook coral — the "hearted" color everywhere (2D icons and
+     the 3D FloatingHearts palette both draw from this), replacing the
+     generic Tailwind rose/red so hearts read as one consistent, painted
+     warm tone rather than a stock UI-library red. */
+  --color-coral: #e2748a;
+  --color-coral-soft: #f6d4dc;
 
   /* Shadows */
   --shadow-soft: 0 2px 12px rgba(60, 42, 30, 0.08);

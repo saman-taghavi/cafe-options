@@ -31,7 +31,7 @@ export function HeartBurst({ burstKey }: { burstKey: number }) {
                   scale: 0.9 + Math.random() * 0.5,
                 }}
                 transition={{ duration: 0.75, ease: 'easeOut' }}
-                className="absolute text-rose-500"
+                className="absolute text-coral"
               >
                 <Heart className="w-3 h-3 fill-current" />
               </motion.span>
