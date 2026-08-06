@@ -6,6 +6,21 @@ import { type Cafe } from '../../lib/schema/cafe'
 import { useSound } from '../../hooks/useSound'
 import { DateCard } from './DateCard'
 
+// iOS Safari's own "scroll the focused input into view" behavior gets
+// confused when the input lives inside a `position: fixed` drawer (our
+// Vaul sheet) — it was scrolling the wrong container back to the top,
+// leaving the hero image showing above the keyboard instead of the
+// field you just tapped. Doing it ourselves, targeting the actual
+// element, is far more reliable than trusting the platform here. The
+// delay lets the keyboard's open animation (and the layout shift it
+// causes) start before we measure where to scroll to.
+function scrollFieldIntoView(e: React.FocusEvent<HTMLElement>) {
+  const el = e.currentTarget
+  window.setTimeout(() => {
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }, 300)
+}
+
 function formatWhen(date: string, time: string) {
   if (!date) return ''
   const [y, m, d] = date.split('-').map(Number)
@@ -138,7 +153,8 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
                   type="date"
                   value={plannedDate}
                   onChange={e => setPlannedDate(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
+                  onFocus={scrollFieldIntoView}
+                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-base text-ink focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
                 />
               </div>
               <div className="relative">
@@ -146,7 +162,8 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
                   type="time"
                   value={plannedTime}
                   onChange={e => setPlannedTime(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
+                  onFocus={scrollFieldIntoView}
+                  className="w-full px-4 py-3 rounded-2xl border border-neutral-200 bg-neutral-50 text-base text-ink focus:outline-none focus:ring-2 focus:ring-coral-soft focus:border-coral transition-all"
                 />
               </div>
             </div>
@@ -165,6 +182,7 @@ export function PickCeremony({ cafe, onComplete }: { cafe: Cafe, onComplete: () 
             <textarea
               value={note}
               onChange={e => setNote(e.target.value)}
+              onFocus={scrollFieldIntoView}
               placeholder="Say something to him — optional (“window seat, please?”)"
               rows={2}
               maxLength={180}
