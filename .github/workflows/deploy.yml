@@ -54,6 +54,15 @@ jobs:
         with:
           path: './dist/client'
 
+      # GitHub Pages occasionally gets stuck in "deployment_in_progress" for the
+      # full 10-minute timeout (a backend hiccup, not something wrong with the
+      # build/artifact — it happens even on an isolated workflow_dispatch with
+      # nothing else deploying). Wrap the deploy in automatic retries so a
+      # transient stall self-heals instead of requiring a manual re-run.
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: Wandalen/wretry.action@v3
+        with:
+          action: actions/deploy-pages@v4
+          attempt_limit: 3
+          attempt_delay: 30000
